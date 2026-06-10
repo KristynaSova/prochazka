@@ -678,23 +678,7 @@ h1, h2, h3, h4, h5, h6 {
 .roles__card-overlay {
     position:   absolute;
     inset:      0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05)  0%,
-        rgba(0, 0, 0, 0.30) 40%,
-        rgba(0, 0, 0, 0.72) 100%
-    );
-}
-
-/* Designér zážitků – gradient tmavší uprostřed, kde leží text */
-.roles__card--designer .roles__card-overlay {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.10)  0%,
-        rgba(0, 0, 0, 0.55) 35%,
-        rgba(0, 0, 0, 0.65) 65%,
-        rgba(0, 0, 0, 0.20) 100%
-    );
+    background: rgba(0, 0, 0, 0.30);
 }
 
 .roles__card-content {
@@ -1367,23 +1351,25 @@ h1, h2, h3, h4, h5, h6 {
     color:                var(--color-secondary);
     margin-inline:        clamp(1.25rem, calc(-1.808rem + 13.59vw), 14.5rem);   /* 20px@360 → 232px@1920 */
     border-radius:        1.25rem 1.25rem 0 0;
-    padding-block-start:  clamp(2.5rem, calc(2.111rem + 1.731vw), 4.1875rem);  /* 40px@360 → 67px@1920 */
+    padding-block-start:  clamp(2rem, calc(1.495rem + 2.244vw), 4.1875rem);      /* 32px@360 → 67px@1920 */
     padding-inline-start: clamp(1.25rem, calc(-0.264rem + 6.731vw), 7.8125rem); /* 20px@360 → 125px@1920 */
-    padding-block-end:    clamp(1rem, calc(0.957rem + 0.192vw), 1.1875rem);    /* 16px@360 → 19px@1920 */
+    padding-inline-end:   1.25rem;                                                /* 20px mob; 0 desktop */
+    padding-block-end:    clamp(1.1875rem, calc(2.1875rem - 0.833vw), 2rem);     /* 32px@360 → 19px@1920 */
 }
 
 .footer__inner {
     display:        flex;
-    align-items:    flex-start;
+    align-items:    stretch;
     flex-direction: column;
-    gap:            2.5rem;
+    gap:            3.75rem;
 }
 
 .footer__signature {
-    display:     block;
-    width:       clamp(11.25rem, calc(10.154rem + 4.872vw), 16rem); /* 180px@360 → 256px@1920 */
-    height:      auto;
-    flex-shrink: 0;
+    display:       block;
+    width:         clamp(11.25rem, calc(10.154rem + 4.872vw), 16rem); /* 180px@360 → 256px@1920 */
+    height:        auto;
+    flex-shrink:   0;
+    margin-inline: auto; /* centrování na mobilu */
 }
 
 .footer__right {
@@ -1393,14 +1379,14 @@ h1, h2, h3, h4, h5, h6 {
 .footer__nav-group {
     display:        flex;
     flex-direction: column;
-    gap:            clamp(1.25rem, 2vw, 2rem);
+    gap:            6.25rem;
 }
 
 .footer__nav-cols {
-    display:     flex;
-    align-items: flex-start;
-    flex-wrap:   wrap;
-    gap:         clamp(1.5rem, 5vw, 2.5rem);
+    display:        flex;
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            1rem;
 }
 
 .footer__nav-col {
@@ -1413,10 +1399,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__address {
-    display:        flex;
-    flex-direction: column;
-    gap:            1rem;
-    font-style:     normal;
+    display:          flex;
+    flex-direction:   column;
+    gap:              1rem;
+    font-style:       normal;
+    order:            -1;
+    margin-block-end: 4rem; /* extra mezera před nav linky: 64px + 16px gap = 80px */
 }
 
 .footer__nav-link {
@@ -1432,11 +1420,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__bottom {
-    display:         flex;
-    align-items:     center;
-    justify-content: space-between;
-    flex-wrap:       wrap;
-    gap:             0.5rem;
+    display:            flex;
+    align-items:        center;
+    justify-content:    space-between;
+    flex-wrap:          wrap;
+    gap:                0.5rem;
 }
 
 .footer__credits {
@@ -1454,15 +1442,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
+    .site-footer {
+        padding-inline-end: 0;
+    }
+
     .footer__inner {
-        flex-direction: row;
-        gap:            0;
+        position: relative; /* anchor pro absolutní podpis */
+        gap:      0;
+    }
+
+    .footer__signature {
+        position: absolute;
+        top:      0;
+        left:     0;
+        margin:   0; /* reset mobilního auto-centrování */
     }
 
     .footer__right {
         display:            flex;
-        justify-content:    flex-end;
-        padding-inline-end: clamp(3.125rem, calc(-6.458rem + 19.965vw), 17.5rem); /* 50px@768 → 280px@1920 */
+        justify-content:    center;
+        align-items:        flex-start;
+        width:              100%;
         margin-block-start: clamp(2.0625rem, calc(-1.771rem + 7.986vw), 7.8125rem); /* 33px@768 → 125px@1920 */
     }
 
@@ -1471,8 +1471,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .footer__nav-cols {
-        flex-wrap: nowrap;
-        gap:       0;
+        flex-direction: row;
+        flex-wrap:      nowrap;
+        gap:            0;
+    }
+
+    .footer__address {
+        order:            0;
+        margin-block-end: 0;
     }
 
     .footer__nav-col:first-child {
