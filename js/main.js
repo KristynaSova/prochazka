@@ -72,9 +72,6 @@
 
     if (refWrapper && refTrack && refSlides.length > 1 && refDots.length) {
         let currentSlide = 0;
-        let autoTimer    = null;
-        const DELAY      = 10000; /* ms mezi slidy */
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         const setHeight = (index) => {
             refWrapper.style.height = refSlides[index].scrollHeight + 'px';
@@ -92,50 +89,25 @@
             currentSlide = index;
         };
 
-        const startAuto = () => {
-            if (reducedMotion) return;
-            stopAuto();
-            autoTimer = setInterval(() => {
-                goTo((currentSlide + 1) % refSlides.length);
-            }, DELAY);
-        };
-
-        const stopAuto = () => {
-            clearInterval(autoTimer);
-            autoTimer = null;
-        };
-
         /* Inicializace */
         goTo(0);
-        startAuto();
-
-        /* Pauza při hoveru / focusu */
-        const refSection = refWrapper.closest('.roles__reference');
-        if (refSection) {
-            refSection.addEventListener('mouseenter', stopAuto);
-            refSection.addEventListener('mouseleave', startAuto);
-            refSection.addEventListener('focusin',    stopAuto);
-            refSection.addEventListener('focusout',   startAuto);
-        }
 
         /* Ruční navigace tečkami */
         refDots.forEach((dot, i) => {
             dot.addEventListener('click', () => {
-                stopAuto();
                 goTo(i);
-                startAuto();
             });
             dot.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowRight') {
                     e.preventDefault();
                     const next = (currentSlide + 1) % refSlides.length;
-                    stopAuto(); goTo(next); startAuto();
+                    goTo(next);
                     refDots[next].focus();
                 }
                 if (e.key === 'ArrowLeft') {
                     e.preventDefault();
                     const prev = (currentSlide - 1 + refSlides.length) % refSlides.length;
-                    stopAuto(); goTo(prev); startAuto();
+                    goTo(prev);
                     refDots[prev].focus();
                 }
             });
