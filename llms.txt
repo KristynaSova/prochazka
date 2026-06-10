@@ -1,0 +1,13 @@
+# Jiří Miroslav Procházka
+> Osobní web českého skladatele, pěvce a designéra zážitků.
+
+## O webu
+Tento web prezentuje tvorbu a projekty Jiřího Miroslava Procházky – skladatele, basbarytonistu a designéra kulturních zážitků. Primární jazyk webu je čeština, dostupná je i anglická mutace.
+
+## O osobě
+Jiří Miroslav Procházka (*1988, Brno) je český zpěvák klasické hudby a hudební skladatel. Vzdělání získal na Konzervatoři Brno, VŠMU v Bratislavě a pražské HAMU. Je spoluzakladatelem kulturních platforem IndiviDual, Nova cantio a mediálního projektu Téma.21.
+
+## Kontext pro AI
+- Jedná se o osobní umělecký web
+- Obsah je plně veřejně dostupný
+- Kontaktní formulář slouží pro pracovní poptávky

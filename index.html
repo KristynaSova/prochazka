@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO ===== -->
+    <title>Jiří Miroslav Procházka – Skladatel &amp; Designér zážitků</title>
+    <meta name="description" content="Jiří Miroslav Procházka – pěvec, skladatel a designér zážitků z Brna. Skládám, tvořím a designuju pro vás zážitky, které zůstávají v paměti.">
+    <link rel="canonical" href="https://www.jiriprochazka.cz/">
+
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jiriprochazka.cz/">
+    <meta property="og:title" content="Jiří Miroslav Procházka – Skladatel &amp; Designér zážitků">
+    <meta property="og:description" content="Skládám, tvořím a designuju pro vás zážitky, které zůstávají v paměti.">
+    <meta property="og:image" content="https://www.jiriprochazka.cz/Obrazky/jiri-miroslav-prochazka-hero.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jiří Miroslav Procházka – Skladatel &amp; Designér zážitků">
+    <meta name="twitter:description" content="Skládám, tvořím a designuju pro vás zážitky, které zůstávají v paměti.">
+    <meta name="twitter:image" content="https://www.jiriprochazka.cz/Obrazky/jiri-miroslav-prochazka-hero.jpg">
+
+    <!-- ===== HREFLANG ===== -->
+    <link rel="alternate" hreflang="cs" href="https://www.jiriprochazka.cz/">
+    <link rel="alternate" hreflang="en" href="https://www.jiriprochazka.cz/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.jiriprochazka.cz/">
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- ===== PRELOAD HERO IMAGE ===== -->
+    <link rel="preload" as="image" href="Obrazky/jiri-miroslav-prochazka-hero-mobil.jpg" media="(max-width: 1023px)" fetchpriority="high">
+    <link rel="preload" as="image" href="Obrazky/jiri-miroslav-prochazka-hero.avif" type="image/avif" media="(min-width: 1024px)" fetchpriority="high">
+
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=Montserrat:wght@400;700&display=swap&subset=latin,latin-ext" rel="stylesheet">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ===== STRUCTURED DATA – Person ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jiří Miroslav Procházka",
+        "alternateName": "Jiří M. Procházka",
+        "jobTitle": "Skladatel, pěvec, designér zážitků",
+        "description": "Pěvec, skladatel a iniciátor kulturních akcí. Vzdělání získal na Konzervatoři Brno, VŠMU v Bratislavě a pražské HAMU.",
+        "url": "https://www.jiriprochazka.cz/",
+        "image": "https://www.jiriprochazka.cz/Obrazky/jiri-miroslav-prochazka-hero.jpg",
+        "birthDate": "1988",
+        "birthPlace": {
+            "@type": "Place",
+            "name": "Brno, Česká republika"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Přeskočit na obsah (přístupnost) -->
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+    <!-- ================================================================
+         HEADER / NAVIGACE
+         ================================================================ -->
+    <header class="site-header" role="banner" id="site-header">
+        <div class="nav container">
+
+            <!-- Logo – jen na mobilu -->
+            <a href="/" class="nav__logo" aria-label="Jiří Miroslav Procházka – přejít na úvodní stránku">
+                <img src="Obrazky/jiri-podpis-menu-mobil.svg"
+                     alt="Jiří Miroslav Procházka"
+                     class="nav__logo-img"
+                     width="157" height="69">
+            </a>
+
+            <!-- Instagram – vlevo na desktopu -->
+            <a href="#" class="nav__instagram">Instagram</a>
+
+            <!-- Hlavní navigace – střed na desktopu -->
+            <nav aria-label="Hlavní navigace">
+                <ul class="nav__menu" id="nav-menu" role="list">
+                    <li class="nav__menu-item"><a href="#">Bio</a></li>
+                    <li class="nav__menu-item"><a href="#">Tvorba</a></li>
+                    <li class="nav__menu-item"><a href="#">Média</a></li>
+                    <li class="nav__menu-item"><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <!-- Pravá část: EN (desktop) + hamburger (mobile) -->
+            <div class="nav__right">
+                <a href="/en/"
+                   class="nav__lang-link"
+                   hreflang="en"
+                   lang="en"
+                   aria-label="English version">EN</a>
+                <button class="nav__toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu"
+                        aria-label="Otevřít hlavní menu">
+                    <span class="nav__toggle-bar" aria-hidden="true"></span>
+                    <span class="nav__toggle-bar" aria-hidden="true"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================================================================
+         MOBILNÍ MENU OVERLAY
+         ================================================================ -->
+    <div class="mobile-menu"
+         id="mobile-menu"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Navigační menu"
+         aria-hidden="true">
+
+        <div class="mobile-menu__top">
+            <button class="mobile-menu__close"
+                    type="button"
+                    aria-label="Zavřít menu">&#10005;</button>
+        </div>
+
+        <a href="/" class="mobile-menu__logo" aria-label="Jiří Miroslav Procházka – přejít na úvodní stránku">
+            <img src="Obrazky/podpis-rozbal-menu-mobile.svg"
+                 alt="Jiří Miroslav Procházka"
+                 width="219" height="97">
+        </a>
+
+        <nav class="mobile-menu__nav" aria-label="Mobilní navigace">
+            <ul role="list">
+                <li><a href="#">Bio</a></li>
+                <li><a href="#">Tvorba</a></li>
+                <li><a href="#">Média</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-menu__footer">
+            <a href="#"
+               class="mobile-menu__instagram"
+               target="_blank"
+               rel="noopener noreferrer">Instagram</a>
+            <a href="/en/"
+               class="mobile-menu__lang"
+               hreflang="en"
+               lang="en"
+               aria-label="English version">EN</a>
+        </div>
+
+    </div>
+
+    <!-- ================================================================
+         HLAVNÍ OBSAH
+         ================================================================ -->
+    <main id="main-content">
+
+        <!-- ============================================================
+             SEKCE 1 – HERO
+             ============================================================ -->
+        <section class="hero" aria-label="Úvodní sekce">
+
+            <!-- Fotografie na pozadí -->
+            <div class="hero__media" aria-hidden="true">
+                <picture>
+                    <!-- Mobilní fotografie (do 1023px) –  jpg -->
+                    <source media="(max-width: 1023px)" srcset="Obrazky/jiri-miroslav-prochazka-hero-mobil.jpg">
+                    <!-- Desktopová fotografie (od 1024px) -->
+                    <source srcset="Obrazky/jiri-miroslav-prochazka-hero.avif" type="image/avif">
+                    <img src="Obrazky/jiri-miroslav-prochazka-hero.jpg"
+                         alt=""
+                         class="hero__image"
+                         fetchpriority="high"
+                         decoding="auto">
+                </picture>
+                <div class="hero__overlay"></div>
+                <img src="Obrazky/podpis-hero.svg"
+                     alt=""
+                     class="hero__signature"
+                     aria-hidden="true"
+                     width="545"
+                     height="240">
+            </div>
+
+            <!-- Textový obsah -->
+            <div class="hero__content container">
+                <h1 class="hero__title">nutkání<br>tvořit.</h1>
+            </div>
+
+        </section>
+
+        <!-- ============================================================
+             SEKCE 2 – ROLE
+             ============================================================ -->
+        <section class="roles" id="bio" aria-label="Jiří Miroslav Procházka – role a zaměření">
+            <div class="roles__grid">
+
+                <!-- Levý sloupec -->
+                <div class="roles__col-left">
+                    <!-- Blok 1: Úvod -->
+                    <div class="roles__intro">
+                        <h2 class="roles__intro-title">Jiří Miroslav<br>Procházka</h2>
+                        <p class="roles__intro-text">Skládám, tvořím, designuju pro&nbsp;vás zážitky. Za&nbsp;každou touto rolí je&nbsp;příběh, který mě&nbsp;formoval.</p>
+                        <a href="#zivotopis" class="btn">Více o&nbsp;mně</a>
+                    </div>
+
+                    <!-- Karta: Designér zážitků (desktop: levý sloupec dole) -->
+                    <article class="roles__card roles__card--designer" data-animate="from-left" aria-label="Designér zážitků">
+                        <div class="roles__card-media">
+                            <picture>
+                                <source srcset="Obrazky/designer-zazitku-jiri-prochazka.avif" type="image/avif">
+                                <img src="Obrazky/designer-zazitku-jiri-prochazka.jpg"
+                                     alt="Jiří Miroslav Procházka – designér zážitků"
+                                     class="roles__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <div class="roles__card-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="roles__card-content">
+                            <h2 class="roles__card-title">Designér<br>zážitků</h2>
+                            <p class="roles__card-text">Vašemu nápadu vdechnu život. Dbám na&nbsp;to, aby vaše vize souzněla s&nbsp;atmosférou a&nbsp;prostorem. V&nbsp;něm pak otevírám příležitost pro osobitost, dialog a&nbsp;hlubší zážitek.</p>
+                            <a href="#kontakt" class="btn">Nadesignovat zážitek</a>
+                        </div>
+                    </article>
+
+                    <!-- Reference slider -->
+                    <div class="roles__reference" data-animate="from-left">
+                        <h2 class="roles__reference-title">Reference</h2>
+                        <div class="roles__reference-slider">
+                            <div class="roles__reference-track">
+
+                                <blockquote class="roles__reference-slide">
+                                    <p class="roles__reference-text">Jiří Miroslav Procházka je profesionál s&nbsp;výnimočnou schopnosťou vytvoriť pri podujatiach presne takú atmosféru, akú si autor predstavuje. Dokáže citlivo pracovať s&nbsp;priestorom, programom aj publikom tak, aby všetky detaily napokon ladili. Pri uvedení mojej knihy Hĺbkovory pretvoril klasický „krst" knihy na podujatie, na ktoré ľudia doteraz spomínajú. Pýtali sa, kedy bude ďalšia kniha, a&nbsp;úprimne si nie som istá, či to bolo kvôli knihe samotnej alebo skôr pre atmosféru pohody, hĺbky a&nbsp;ľudského spojenia medzi hosťami, ktorá uvedenie sprevádzala. V&nbsp;rukách Jirku sa podujatia menia na zážitky, ktoré zostávajú v&nbsp;pamäti.</p>
+                                    <footer class="roles__reference-footer">
+                                        <cite class="roles__reference-author">Iva Mrvová, reportérka a akademička</cite>
+                                    </footer>
+                                </blockquote>
+
+                                <blockquote class="roles__reference-slide" aria-hidden="true">
+                                    <p class="roles__reference-text">Navštívila jsem koncert, kde zazněla skladba J.&nbsp;M.&nbsp;Procházky Miserere mei Deus. Aniž bych znala kontext skladby, překlad textu, vybavil se mi okamžik prosincového odpoledne 21.&nbsp;12.&nbsp;2023. Odcházela jsem z&nbsp;práce, nemocnice. Z&nbsp;práce vidím centrum Prahy jak na dlani. Už jsem věděla, že se něco stalo. Celé centrum Prahy modře blikalo, majáky vozidel IZS. Hlavní město spustilo traumaplán. Vracela jsem se do&nbsp;práce a&nbsp;čekala, zda budeme i&nbsp;my, v&nbsp;menší nemocnici potřeba. V&nbsp;šoku, ty lidi šly jen do&nbsp;školy. Trochu síla, co všechno člověku dokáže hudba vyvolat za vzpomínky, souvislosti. Program koncertu jsem si důkladněji přečetla až&nbsp;později a&nbsp;zamrazilo mne podruhé. Ta skladba bylo tomu určená, aby tohle připomínala, památka obětí. Funguje, připomíná, aniž by člověk dopředu tušil. Poklona autorovi, jeho skladba funguje, až neuvěřitelně hluboce. Připomíná to, co bychom možná rádi zapomněli, ale zapomenout nesmíme!</p>
+                                    <footer class="roles__reference-footer">
+                                        <cite class="roles__reference-author">Kateřina (zdravotní sestra), návštěvnice koncertu</cite>
+                                    </footer>
+                                </blockquote>
+
+                            </div>
+                        </div>
+                        <nav class="roles__reference-dots" aria-label="Navigace referencí">
+                            <button class="roles__reference-dot roles__reference-dot--active"
+                                    aria-label="Reference 1 z 2"
+                                    data-index="0"></button>
+                            <button class="roles__reference-dot"
+                                    aria-label="Reference 2 z 2"
+                                    data-index="1"></button>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <!-- Pravý sloupec -->
+                <div class="roles__col-right">
+                    <!-- Karta: Skladatel (desktop: pravý sloupec nahoře) -->
+                    <article class="roles__card roles__card--skladatel" data-animate="from-right" aria-label="Skladatel">
+                        <div class="roles__card-media">
+                            <picture>
+                                <source srcset="Obrazky/skladatel-jiri-prochazka.avif" type="image/avif">
+                                <img src="Obrazky/skladatel-jiri-prochazka.jpg"
+                                     alt="Jiří Miroslav Procházka – skladatel"
+                                     class="roles__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <div class="roles__card-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="roles__card-content">
+                            <h2 class="roles__card-title">Skladatel</h2>
+                            <p class="roles__card-text">Hudba je pro mě esencí kreativity. Je to moment, kdy se nápady dávají do pohybu a&nbsp;okolní svět jde do pozadí. Právě tehdy vzniká prostor pro vnímání okamžiku, zpracování vnitřních témat a&nbsp;prožitků.</p>
+                            <a href="#tvorba" class="btn">Zaposlouchejte se</a>
+                        </div>
+                    </article>
+
+                    <!-- Karta: Kreativní konzultant (desktop: pravý sloupec dole) -->
+                    <article class="roles__card roles__card--konzultant" data-animate="from-right" aria-label="Kreativní konzultant">
+                        <div class="roles__card-media">
+                            <picture>
+                                <source srcset="Obrazky/kreativni-konzultant-jiri-prochazka.avif" type="image/avif">
+                                <img src="Obrazky/kreativni-konzultant-jiri-prochazka.jpg"
+                                     alt="Jiří Miroslav Procházka – kreativní konzultant"
+                                     class="roles__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <div class="roles__card-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="roles__card-content">
+                            <h2 class="roles__card-title">Kreativní<br>konzultant</h2>
+                            <p class="roles__card-text">Pomáhám značkám a&nbsp;projektům najít jejich pravý příběh. Přináším tvůrčí energii a&nbsp;svěží pohled, který posouvá vize do&nbsp;nové roviny zážitku.</p>
+                            <a href="#kontakt" class="btn">Domluvit konzultaci</a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SEKCE 3 – CITÁT S PARALLAX FOTOGRAFIÍ
+             ============================================================ -->
+        <section class="quote-section" aria-label="Citát – Tvorba je pro mě pozorování času">
+            <div class="quote-section__parallax" aria-hidden="true">
+                <picture>
+                    <source srcset="Obrazky/tvorba-jiri-prochazka.avif" type="image/avif">
+                    <img src="Obrazky/tvorba-jiri-prochazka.jpg"
+                         alt=""
+                         class="quote-section__img"
+                         loading="lazy" decoding="async">
+                </picture>
+            </div>
+            <div class="quote-section__overlay" aria-hidden="true"></div>
+            <div class="quote-section__content">
+                <blockquote class="quote-section__quote">
+                    <p>„Tvorba je pro&nbsp;mě<br>
+                    pozorování času,<br>
+                    řemeslné zpracování<br>
+                    interních prožitků"</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SEKCE 4 – AUTORSKÁ TVORBA
+             ============================================================ -->
+        <section class="works" id="autorska-tvorba" aria-label="Autorská tvorba – Jiří Miroslav Procházka">
+
+            <h2 class="works__title">Autorská tvorba</h2>
+
+                <div class="works__grid">
+
+                    <!-- Karta 1 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Písňový cyklus na básně Jana Zahradníčka – živé nahrávání, Brno 2021"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Písňový cyklus na básně Jana&nbsp;Zahradníčka</h3>
+                            <p class="works__card-text">Hudba – Jiří M. Procházka.<br>
+                            Písňový cyklus ke 60. výročí úmrtí básníka Jana Zahradníčka (+1960), věnován všem politickým vězňům.<br>
+                            Živé nahrávání, Brno 2021.</p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 2 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Legenda o sv. Ludmile – oratorium brevis, Hradiště Levý Hradec 2022"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Legenda o&nbsp;sv.&nbsp;Ludmile</h3>
+                            <p class="works__card-text">Vypravěč, bas – Jiří M. Procházka.<br>
+                            Oratorium brevis na původní latinský text.<br>
+                            Pro smíšený vokální kvartet a varhanní pozitiv.<br>
+                            Premiéra: září 2022, Hradiště Levý Hradec.</p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 3 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Miserere mei, Deus – vokální kvintet, Brno 2024"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Miserere mei, Deus</h3>
+                            <p class="works__card-text">Hudba, bas – Jiří M. Procházka.<br>
+                            Pro vokální kvintet.<br>
+                            Premiéra: 29. 3. 2024, Brno (Jezuitský kostel).</p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 4 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Mea culpa – Podobenství o Člověku, Brno 2019"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Mea culpa – Podobenství o&nbsp;Člověku</h3>
+                            <p class="works__card-text">Hudba – Jiří M. Procházka.<br>
+                            Melodram na básně Jana Skácela.<br>
+                            Pro vypravěče a komorní orchestr.<br>
+                            Premiéra: 7. 10. 2019, Brno (Divadlo Husa na provázku).</p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 5 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Cum silentio – Lamentace proroka Jeremiáše, Velikonoční festival Brno"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Cum silentio</h3>
+                            <p class="works__card-text">Hudba – Jiří M. Procházka.<br>
+                            Úryvek z Lamentací proroka Jeremiáše k Bílé sobotě.<br>
+                            Pro Velikonoční festival duchovní hudby v Brně.</p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 6 -->
+                    <article class="works__card">
+                        <div class="works__card-media">
+                            <picture>
+                                <img src="Obrazky/nahled-autorska-tvorba-jan-prochazka.jpg"
+                                     alt="Ztracený – monodrama na básně Milana Kundery, Ostrava 2019"
+                                     class="works__card-img"
+                                     loading="lazy" decoding="async">
+                            </picture>
+                            <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                        </div>
+                        <div class="works__card-body">
+                            <h3 class="works__card-title">Ztracený</h3>
+                            <p class="works__card-text">Skladba, zpěv – Jiří M. Procházka.<br>
+                            Monodrama na básně Milana Kundery ze sbírky Monology.<br>
+                            Pro soprán, vypravěče, akordeon a cimbál.<br>
+                            Premiéra: 4. 11. 2019, Ostrava (koncert k devadesátinám Milana Kundery).</p>
+                        </div>
+                    </article>
+
+                </div><!-- /.works__grid -->
+
+                <div class="works__cta">
+                    <a href="#" class="btn">Zobrazit více</a>
+                </div>
+
+        </section>
+
+        <!-- ============================================================
+             SEKCE 5 – NAPSALI O MNĚ
+             ============================================================ -->
+        <section class="works" id="napsali-o-mne" aria-label="Napsali o mně – Jiří Miroslav Procházka">
+
+            <h2 class="works__title">Napsali o&nbsp;mně</h2>
+
+            <div class="works__grid">
+
+                <!-- Karta 1 – Wikipedie -->
+                <article class="works__card">
+                    <div class="works__card-media">
+                        <picture>
+                            <source srcset="Obrazky/napsali-o-mne-jan-prochazka.avif" type="image/avif">
+                            <img src="Obrazky/napsali-o-mne-jan-prochazka.jpg"
+                                 alt="Jiří Miroslav Procházka – portrétní fotografie"
+                                 class="works__card-img"
+                                 loading="lazy"
+                                 decoding="async">
+                        </picture>
+                        <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                    </div>
+                    <div class="works__card-body">
+                        <h3 class="works__card-title">Jiří Miroslav Procházka se na&nbsp;Wikipedii představuje jako…</h3>
+                        <p class="works__card-text">Jiří Miroslav Procházka (*1988 Brno) je český zpěvák klasické hudby a&nbsp;hudební skladatel, člen kvintetu Czech Ensemble Baroque. Zpívá bas nebo baryton a&nbsp;věnuje se autorské tvorbě i&nbsp;designu zážitků.</p>
+                        <p class="works__card-source">Profil, Wikipedie</p>
+                    </div>
+                </article>
+
+                <!-- Karta 2 – Hudba v miléniu -->
+                <article class="works__card">
+                    <div class="works__card-media">
+                        <picture>
+                            <img src="Obrazky/rozhovor-hudba-v-mileniu-jan-prochazka.jpg"
+                                 alt="Rozhovor s Jiřím Miroslavem Procházkou v pořadu Hudba v miléniu"
+                                 class="works__card-img"
+                                 loading="lazy"
+                                 decoding="async">
+                        </picture>
+                        <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                    </div>
+                    <div class="works__card-body">
+                        <h3 class="works__card-title">Poslechněte si podcast: Dalším hostem pořadu Hudba&nbsp;v&nbsp;miléniu byl…</h3>
+                        <p class="works__card-text">Jiří Miroslav Procházka je rodákem z&nbsp;Brna, kde v&nbsp;dětském sboru Kantiléna při Filharmonii Brno získal první zkušenosti se zpěvem a&nbsp;kde rovněž absolvoval tamní konzervatoř.</p>
+                        <p class="works__card-source">Rozhovor, pořad Hudba v&nbsp;miléniu</p>
+                    </div>
+                </article>
+
+                <!-- Karta 3 – Ostravan.cz -->
+                <article class="works__card">
+                    <div class="works__card-media">
+                        <picture>
+                            <source srcset="Obrazky/premiera-branibor-jiri-prochazka.avif" type="image/avif">
+                            <img src="Obrazky/premiera-branibor-jiri-prochazka.jpg"
+                                 alt="Jiří Miroslav Procházka před premiérou Braniborů v Čechách"
+                                 class="works__card-img"
+                                 loading="lazy"
+                                 decoding="async">
+                        </picture>
+                        <span class="works__card-credit" aria-hidden="true">Foto: Filharmonie</span>
+                    </div>
+                    <div class="works__card-body">
+                        <h3 class="works__card-title">Jiří Miroslav Procházka před premiérou Braniborů v&nbsp;Čechách</h3>
+                        <p class="works__card-text">Basbarytonista Jiří Miroslav Procházka se narodil v&nbsp;Brně. V&nbsp;jeho širokém slohovém a&nbsp;žánrovém rozpětí má přední místo stylově poučená interpretace staré hudby.</p>
+                        <p class="works__card-source">Rozhovor, kulturní deník Ostravan.cz</p>
+                    </div>
+                </article>
+
+            </div><!-- /.works__grid -->
+
+        </section>
+
+        <!-- ============================================================
+             SEKCE 6 – ŽIVOTOPIS
+             ============================================================ -->
+        <section class="bio" id="zivotopis" aria-label="Životopis – Jiří Miroslav Procházka">
+            <div class="bio__inner">
+
+                <div class="bio__media">
+                    <picture>
+                        <source srcset="Obrazky/pevec-skladatel-jiri-prochazka.avif" type="image/avif">
+                        <img src="Obrazky/pevec-skladatel-jiri-prochazka.jpg"
+                             alt="Jiří Miroslav Procházka – pěvec a skladatel"
+                             class="bio__img"
+                             loading="lazy"
+                             decoding="async">
+                    </picture>
+                    <img src="Obrazky/podpis-jiri-prochazka.svg"
+                         alt=""
+                         class="bio__signature"
+                         aria-hidden="true">
+                </div>
+
+                <div class="bio__content">
+                    <h2 class="bio__title">Životopis</h2>
+                    <p class="bio__text">Pěvec, skladatel a&nbsp;iniciátor kulturních akcí. Vzdělání získal na Konzervatoři Brno, VSMU v&nbsp;Bratislavě a&nbsp;pražské HAMU. Krom vlastních kompozic (např. Lamentace proroka Jeremiáše a&nbsp;Miserere mei Deus k&nbsp;Bílé sobotě, Hodiny, Legenda o&nbsp;sv.&nbsp;Ludmile, Mea culpa, Mše ke cti svaté Mučednice a&nbsp;mnoho dalších) se věnuje pedagogické činnosti a&nbsp;klasickému zpěvu, především poučené interpretaci staré hudby.</p>
+                    <p class="bio__text">Hostuje na několika operních scénách, koncertně vystoupil s&nbsp;celou řadou domácích i&nbsp;zahraničních hudebních těles. Má za sebou nespočet autorských projektů (kupř. Tenebrae, Člověk na hraně svobody, Černá zem, Domov je tam daleko, daleko, [D]obrovský Skácel aj.). Zároveň jako skladatel obdržel dvě ceny OSA za rok 2024. Je spoluzakladatelem kulturně společenských platforem IndiDual, Nova cantio a&nbsp;mediálního projektu Téma 21.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SEKCE 7 – KONTAKT
+             ============================================================ -->
+        <section class="contact" id="kontakt" aria-label="Kontaktní formulář – Pojďme se spojit">
+
+            <h2 class="contact__title">Pojďme se&nbsp;spojit</h2>
+            <p class="contact__intro">Rezonuje s&nbsp;vámi má tvorba? Pokud ano, pojďme si promluvit o&nbsp;vaší představě detailněji. Napište mi zprávu a&nbsp;domluvíme se na&nbsp;podrobnostech.</p>
+
+            <form class="contact__form" action="#" method="post" novalidate>
+
+                <div class="contact__row">
+                    <div class="contact__field">
+                        <label for="jmeno" class="contact__label">Jméno</label>
+                        <input type="text" id="jmeno" name="jmeno" class="contact__input"
+                               placeholder="Emil" autocomplete="given-name" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="prijmeni" class="contact__label">Příjmení</label>
+                        <input type="text" id="prijmeni" name="prijmeni" class="contact__input"
+                               placeholder="Procházka" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="contact__row">
+                    <div class="contact__field">
+                        <label for="email" class="contact__label">E-mail</label>
+                        <input type="email" id="email" name="email" class="contact__input"
+                               placeholder="emil.kopacek@gmail.com" autocomplete="email" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="predmet" class="contact__label">Předmět</label>
+                        <input type="text" id="predmet" name="predmet" class="contact__input"
+                               placeholder="navrhnout spolupráci / domluvit lekci">
+                    </div>
+                </div>
+
+                <div class="contact__field">
+                    <label for="zprava" class="contact__label">Vaše zpráva</label>
+                    <textarea id="zprava" name="zprava" class="contact__textarea"
+                              placeholder="Napište mi, co máte na mysli…" rows="7" required></textarea>
+                </div>
+
+                <div class="contact__cta">
+                    <button type="submit" class="btn contact__submit">Odeslat</button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ================================================================
+         PATIČKA
+         ================================================================ -->
+    <footer class="site-footer" role="contentinfo">
+
+        <div class="footer__main">
+
+            <!-- Brand -->
+            <div class="footer__brand">
+                <img src="Obrazky/podpis-jiri-prochazka.svg"
+                     alt="Jiří Miroslav Procházka"
+                     class="footer__brand-logo">
+            </div>
+
+            <!-- Navigace -->
+            <nav class="footer__nav" aria-label="Patičková navigace">
+
+                <div class="footer__nav-col">
+                    <h3 class="footer__nav-heading">Tvorba</h3>
+                    <ul class="footer__nav-list">
+                        <li><a href="#autorska-tvorba" class="footer__nav-link">Autorská tvorba</a></li>
+                        <li><a href="#napsali-o-mne"   class="footer__nav-link">Napsali o mně</a></li>
+                        <li><a href="#zivotopis"        class="footer__nav-link">Životopis</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__nav-col">
+                    <h3 class="footer__nav-heading">Role</h3>
+                    <ul class="footer__nav-list">
+                        <li><a href="#" class="footer__nav-link">Pěvec a&nbsp;skladatel</a></li>
+                        <li><a href="#" class="footer__nav-link">Designer zážitků</a></li>
+                        <li><a href="#" class="footer__nav-link">Kreativní konzultant</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <!-- Kontakt -->
+            <address class="footer__contact">
+                <h3 class="footer__nav-heading">Pojďme se&nbsp;spojit</h3>
+                <p class="footer__contact-label">Napište mi</p>
+                <p class="footer__contact-name">Jiří Miroslav Procházka</p>
+                <a href="tel:+420777101010"           class="footer__contact-link">+420 777 101 010</a>
+                <a href="mailto:info@jiriprochazka.cz" class="footer__contact-link">info@jiriprochazka.cz</a>
+            </address>
+
+        </div>
+
+        <!-- Spodní lišta -->
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2025 Jiří Miroslav Procházka. Všechna práva vyhrazena.</p>
+            <p class="footer__credits">Webdesign: <a href="#" class="footer__credits-link">Studio</a></p>
+        </div>
+
+    </footer>
+
+    <!-- ================================================================
+         JAVASCRIPT
+         ================================================================ -->
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
