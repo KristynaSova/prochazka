@@ -815,9 +815,14 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 
 .roles__reference {
-    margin-top:           clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); /* 48px@768 → 140px@1920 */
+    margin-top:           0;
     padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem); /* zarovnání s intro */
     padding-inline-end:   clamp(2rem, 4vw, 4.5rem);
+}
+
+@media (min-width: 768px) {
+    .roles__reference       { margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); } /* 48px@768 → 140px@1920 */
+    .roles__reference-title { margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); } /* 48px@768 → 140px@1920 */
 }
 
 .roles__reference-title {
