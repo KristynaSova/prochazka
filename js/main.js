@@ -92,6 +92,28 @@
         /* Inicializace */
         goTo(0);
 
+        /* Swipe (touch) */
+        let touchStartX = 0;
+        let touchDeltaX = 0;
+
+        refWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchDeltaX = 0;
+        }, { passive: true });
+
+        refWrapper.addEventListener('touchmove', (e) => {
+            touchDeltaX = e.touches[0].clientX - touchStartX;
+        }, { passive: true });
+
+        refWrapper.addEventListener('touchend', () => {
+            if (Math.abs(touchDeltaX) < 40) return;
+            if (touchDeltaX < 0) {
+                goTo((currentSlide + 1) % refSlides.length);
+            } else {
+                goTo((currentSlide - 1 + refSlides.length) % refSlides.length);
+            }
+        });
+
         /* Ruční navigace tečkami */
         refDots.forEach((dot, i) => {
             dot.addEventListener('click', () => {

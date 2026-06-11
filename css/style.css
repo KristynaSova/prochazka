@@ -234,8 +234,8 @@ h1, h2, h3, h4, h5, h6 {
     flex:        1;
 }
 .nav__logo-img {
-    height: 40px;
-    width:  auto;
+    width:  134px;
+    height: auto;
 }
 
 /* ── Hlavní menu ── */
@@ -729,7 +729,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-inline-end:   0;
     }
 
-    /* Reference: vždy poslední, 40px z obou stran, bez extra margin-top (gap to řeší) */
+    /* Reference: vždy poslední, 40px z obou stran; margin-top řeší grid gap */
     .roles__reference {
         order:       5;
         margin-top:  0;
@@ -815,7 +815,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 
 .roles__reference {
-    margin-top:           clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); /* 48px@768px → 140px@1920px */
+    margin-top:           clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); /* 48px@768 → 140px@1920 */
     padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem); /* zarovnání s intro */
     padding-inline-end:   clamp(2rem, 4vw, 4.5rem);
 }
@@ -828,7 +828,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color:          var(--color-text);
-    margin-bottom:  1.5rem; /* 24px */
+    margin-block:   0 1.5rem;
 }
 
 .roles__reference-slider {
