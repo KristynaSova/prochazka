@@ -304,8 +304,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__toggle-bar {
     display:          block;
-    width:            26px;
-    height:           1.5px;
+    width:            44px;
+    height:           1.83px;
+    border-radius:    20px;
     background-color: var(--color-primary);
 }
 
