@@ -181,11 +181,16 @@
        -------------------------------------------------------- */
     const header = document.getElementById('site-header');
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             const href = anchor.getAttribute('href');
-            if (href === '#') return;
-            const target = document.querySelector(href);
+            if (href === '#' || href === '/') return;
+
+            // /#section — jen na homepage
+            const selector = href.startsWith('/#') ? href.slice(1) : href;
+            if (href.startsWith('/#') && window.location.pathname !== '/') return;
+
+            const target = document.querySelector(selector);
             if (!target) return;
 
             e.preventDefault();
