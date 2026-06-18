@@ -670,6 +670,7 @@ h1, h2, h3, h4, h5, h6 {
     position:     relative;
     overflow:     hidden;
     aspect-ratio: 2/3; /* portrait – odpovídá Figma výšce 1295px při šířce sloupce 855px */
+    box-shadow:   0 4px 22px 0 rgba(0, 0, 0, 0.25);
 }
 
 .roles__card-media {
@@ -1046,7 +1047,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius:  1.25rem;                        /* 20px */
     overflow:       hidden;
     box-shadow:     0px 4px 22px rgba(0, 0, 0, 0.25);
-    transition:     background-color 400ms ease-out;
+    transition:     background-color 400ms ease-out, transform 400ms ease-out;
     display:        flex;
     flex-direction: column;
 }
@@ -1054,6 +1055,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (hover: hover) {
     .works__card:hover {
         background-color: var(--color-primary);
+        transform:        scale(0.97);
+    }
+    .works__card:hover .works__card-img {
+        transform: scale(1.05);
     }
     .works__card:hover .works__card-title,
     .works__card:hover .works__card-text,
@@ -1072,6 +1077,7 @@ h1, h2, h3, h4, h5, h6 {
     display:      block;
     aspect-ratio: 470 / 262; /* Autorská tvorba */
     object-fit:   cover;
+    transition:   transform 400ms ease-out;
 }
 
 #napsali-o-mne .works__card-img {
@@ -1198,8 +1204,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bio__img {
-    width:   100%;
-    display: block;
+    width:      100%;
+    display:    block;
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
 }
 
 .bio__signature {
@@ -1317,6 +1324,7 @@ h1, h2, h3, h4, h5, h6 {
     padding:            0.75rem 1rem;
     width:              100%;
     outline:            none;
+    box-shadow:         0 4px 22px 0 rgba(0, 0, 0, 0.25);
     transition:         border-color 300ms ease;
     -webkit-appearance: none;
     appearance:         none;
@@ -1324,7 +1332,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact__input::placeholder,
 .contact__textarea::placeholder {
-    color: rgba(253, 207, 207, 0.45);
+    color: #B3B3B3;
 }
 
 .contact__input:focus,
@@ -1343,8 +1351,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact__submit {
-    background-color: var(--color-secondary);
-    color:            var(--color-primary);
+    background-color: transparent;
+    color:            var(--color-secondary);
     border-color:     var(--color-secondary);
 }
 
@@ -1352,7 +1360,6 @@ h1, h2, h3, h4, h5, h6 {
     .contact__submit:hover {
         background-color: var(--color-secondary);
         color:            var(--color-primary);
-        border-color:     var(--color-secondary);
     }
 }
 

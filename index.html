@@ -29,6 +29,9 @@
     <link rel="alternate" hreflang="en" href="https://www.jiriprochazka.cz/en/">
     <link rel="alternate" hreflang="x-default" href="https://www.jiriprochazka.cz/">
 
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="Obrazky/Favicona-jiri.svg">
+
     <!-- ===== PRELOAD HERO IMAGE ===== -->
     <link rel="preload" as="image" href="Obrazky/jiri-miroslav-prochazka-hero-mobil.jpg" media="(max-width: 1023px)" fetchpriority="high">
     <link rel="preload" as="image" href="Obrazky/jiri-miroslav-prochazka-hero.avif" type="image/avif" media="(min-width: 1024px)" fetchpriority="high">
@@ -86,10 +89,10 @@
             <!-- Hlavní navigace – střed na desktopu -->
             <nav aria-label="Hlavní navigace">
                 <ul class="nav__menu" id="nav-menu" role="list">
-                    <li class="nav__menu-item"><a href="#">Bio</a></li>
-                    <li class="nav__menu-item"><a href="#">Tvorba</a></li>
-                    <li class="nav__menu-item"><a href="#">Média</a></li>
-                    <li class="nav__menu-item"><a href="#">Kontakt</a></li>
+                    <li class="nav__menu-item"><a href="/#bio">Bio</a></li>
+                    <li class="nav__menu-item"><a href="/#autorska-tvorba">Tvorba</a></li>
+                    <li class="nav__menu-item"><a href="/#napsali-o-mne">Média</a></li>
+                    <li class="nav__menu-item"><a href="/#kontakt">Kontakt</a></li>
                 </ul>
             </nav>
 
@@ -140,10 +143,10 @@
 
         <nav class="mobile-menu__nav" aria-label="Mobilní navigace">
             <ul role="list">
-                <li><a href="#">Bio</a></li>
-                <li><a href="#">Tvorba</a></li>
-                <li><a href="#">Média</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="/#bio">Bio</a></li>
+                <li><a href="/#autorska-tvorba">Tvorba</a></li>
+                <li><a href="/#napsali-o-mne">Média</a></li>
+                <li><a href="/#kontakt">Kontakt</a></li>
             </ul>
         </nav>
 
@@ -591,7 +594,7 @@
                     <div class="contact__field">
                         <label for="prijmeni" class="contact__label">Příjmení</label>
                         <input type="text" id="prijmeni" name="prijmeni" class="contact__input"
-                               placeholder="Procházka" autocomplete="family-name" required>
+                               placeholder="Kropáček" autocomplete="family-name" required>
                     </div>
                 </div>
 
@@ -599,7 +602,7 @@
                     <div class="contact__field">
                         <label for="email" class="contact__label">E-mail</label>
                         <input type="email" id="email" name="email" class="contact__input"
-                               placeholder="emil.kopacek@gmail.com" autocomplete="email" required>
+                               placeholder="emil.kropacek@gmail.com" autocomplete="email" required>
                     </div>
                     <div class="contact__field">
                         <label for="predmet" class="contact__label">Předmět</label>
@@ -645,19 +648,19 @@
                         <div class="footer__nav-cols">
 
                             <ul class="footer__nav-col">
-                                <li><a href="#" class="footer__nav-link">Homepage</a></li>
-                                <li><a href="#zivotopis" class="footer__nav-link">Bio</a></li>
-                                <li><a href="#autorska-tvorba" class="footer__nav-link">Tvorba</a></li>
+                                <li><a href="/" class="footer__nav-link">Homepage</a></li>
+                                <li><a href="/#bio" class="footer__nav-link">Bio</a></li>
+                                <li><a href="/#autorska-tvorba" class="footer__nav-link">Tvorba</a></li>
                             </ul>
 
                             <ul class="footer__nav-col">
-                                <li><a href="#" class="footer__nav-link">Média</a></li>
-                                <li><a href="#kontakt" class="footer__nav-link">Kontakt</a></li>
+                                <li><a href="/#napsali-o-mne" class="footer__nav-link">Média</a></li>
+                                <li><a href="/#kontakt" class="footer__nav-link">Kontakt</a></li>
                             </ul>
 
                             <address class="footer__address">
                                 <span class="footer__nav-link">Pekářská 35, Brno 602</span>
-                                <a href="https://jiri.miroslav.art" class="footer__nav-link">jiri.miroslav.art</a>
+                                <a href="mailto:info@jirimiroslavprochazka.cz" class="footer__nav-link">jiri.miroslav.art</a>
                                 <a href="tel:+420731079313"         class="footer__nav-link">+420 731 079 313</a>
                             </address>
 
