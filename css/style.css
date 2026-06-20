@@ -854,7 +854,7 @@ h6 {
         top:          auto;
         display:      block;
         width:        18.7175rem;  /* 299px */
-        margin-top:   -4.5rem;     /* táhne podpis výše do prostoru pod intro textem */
+        margin-top:   6.125rem;    /* mezera pod intro textem před podpisem */
         margin-left:  auto;
         margin-right: -4rem;
         transform:    rotate(-19.04deg);
