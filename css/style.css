@@ -839,7 +839,7 @@ h6 {
 /* Desktop: absolutní pozice dle Figmy (top 291px, right 162px, width 544px @ 1920px) */
 .kontakt-section__signature {
     position: absolute;
-    top:   clamp(8rem, calc(8.706rem + 7.899vw), 18.1875rem);    /* ~200px@768 → 291px@1920 */
+    top:   clamp(8rem, calc(12.042rem + 0.955vw), 13.1875rem);   /* ~200px@768 → 211px@1920 */
     right: clamp(0rem, calc(-9.125rem + 14.583vw), 10.125rem);   /* 0@768 → 162px@1920 */
     width: clamp(15.625rem, calc(3.375rem + 25.521vw), 34rem);   /* ~250px@768 → 544px@1920 */
     opacity: 0.55;
