@@ -177,6 +177,20 @@
     }
 
     /* --------------------------------------------------------
+       ZOBRAZIT VÍCE – Autorská tvorba (mobile)
+       -------------------------------------------------------- */
+    const worksMoreBtn  = document.querySelector('.works__cta .btn');
+    const worksSection  = document.getElementById('autorska-tvorba');
+
+    if (worksMoreBtn && worksSection) {
+        worksMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            worksSection.classList.add('is-expanded');
+            worksMoreBtn.closest('.works__cta').hidden = true;
+        });
+    }
+
+    /* --------------------------------------------------------
        PLYNULÝ SCROLL pro kotevní odkazy
        -------------------------------------------------------- */
     const header = document.getElementById('site-header');
