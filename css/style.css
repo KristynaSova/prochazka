@@ -347,6 +347,40 @@ h6 {
     background-color: var(--color-primary);
 }
 
+/* Logo varianty – světlá skrytá by default, tmavá vždy viditelná */
+.nav__logo-img--light { display: none; }
+
+/* Header – primary varianta (kontakt.html) */
+.site-header--primary {
+    background-color: var(--color-primary);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-header--primary .nav__instagram,
+.site-header--primary .nav__menu-item a,
+.site-header--primary .nav__lang-link {
+    color: #E8D9D9;
+}
+
+.site-header--primary .nav__instagram:hover,
+.site-header--primary .nav__menu-item a:hover,
+.site-header--primary .nav__lang-link:hover {
+    opacity: 0.7;
+}
+
+.site-header--primary .nav__toggle-bar {
+    background-color: #E8D9D9;
+}
+
+.site-header--primary .nav__logo-img--dark  { display: none; }
+.site-header--primary .nav__logo-img--light { display: block; }
+
+.site-header--primary .nav__menu-item a:focus-visible,
+.site-header--primary .nav__instagram:focus-visible,
+.site-header--primary .nav__lang-link:focus-visible {
+    outline-color: #E8D9D9;
+}
+
 /* ── Desktop ≥ 1024px ── */
 @media (min-width: 1024px) {
     .nav__logo {
@@ -785,6 +819,61 @@ h6 {
     .dz-reference .roles__reference-dots {
         justify-content: center;
         margin-top: 1.125rem;
+    }
+}
+
+/* ============================================================
+   KONTAKT – standalone stránka (kontakt.html)
+   ============================================================ */
+.kontakt-section {
+    position: relative;
+    margin-top:   clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem);              /* výška headeru */
+    padding-top:    clamp(6.25rem, calc(5.529rem + 3.205vw), 9.375rem);       /* 100px@360 → 150px@1920 */
+    padding-bottom: clamp(3.5rem, calc(2.144rem + 6.026vw), 9.375rem);        /* 56px@360 → 150px@1920 */
+    padding-left:   clamp(2.5rem, calc(-4.207rem + 29.808vw), 31.5625rem);    /* 40px@360 → 505px@1920 */
+    padding-right:  clamp(2.5rem, calc(-4.207rem + 29.808vw), 31.5625rem);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Desktop: absolutní pozice dle Figmy (top 291px, right 162px, width 544px @ 1920px) */
+.kontakt-section__signature {
+    position: absolute;
+    top:   clamp(2rem, calc(6.375rem + 1.563vw), 4.4375rem);     /* ~90px@768 → 71px@1920 */
+    right: clamp(0rem, calc(-9.125rem + 14.583vw), 10.125rem);   /* 0@768 → 162px@1920 */
+    width: clamp(15.625rem, calc(3.375rem + 25.521vw), 34rem);   /* ~250px@768 → 544px@1920 */
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Mobil: v toku mezi intro textem a formulářem, gap ~173px */
+@media (max-width: 767px) {
+    .kontakt-section__signature {
+        position:     relative;
+        display:      block;
+        width:        18.7175rem;  /* 299px */
+        margin-top:   -2.375rem;
+        margin-left:  auto;
+        margin-right: -4rem;
+        transform:    rotate(-19.04deg);
+        transform-origin: left center;
+        opacity:      0.6;
+    }
+
+    .kontakt-section .contact__form {
+        margin-top: 1.375rem; /* ~22px */
+    }
+}
+
+.kontakt-section .contact__form {
+    margin-top: clamp(2rem, calc(1.596rem + 1.795vw), 3.75rem);
+}
+
+@media (max-width: 767px) {
+    .kontakt-section .contact__form {
+        margin-left:  -1.25rem; /* form 20px od kraje, sekce má 40px */
+        margin-right: -1.25rem;
     }
 }
 
@@ -1657,6 +1746,7 @@ h6 {
 .contact__form {
     background-color: var(--color-primary);
     border-radius: 1.25rem;
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
     padding-block: clamp(2rem, calc(1.596rem + 1.795vw), 3.75rem);
     /* 32px@360 → 60px@1920 */
     padding-inline: clamp(1.25rem, calc(0.673rem + 2.564vw), 3.75rem);
@@ -1779,6 +1869,10 @@ h6 {
     align-items: stretch;
     flex-direction: column;
     gap: 3.75rem;
+}
+
+.footer__signature-link {
+    display: contents;
 }
 
 .footer__signature {
