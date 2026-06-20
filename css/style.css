@@ -688,7 +688,6 @@ h6 {
 .dz-slider {
     padding-inline: clamp(1.25rem, calc(-1.836rem + 13.718vw), 14.625rem); /* 20px@360 → 234px@1920 */
     padding-top:    clamp(0rem, calc(-2.134rem + 9.487vw), 9.25rem);        /* 0px@360 → 148px@1920 */
-    padding-bottom: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);       /* 56px@360 → 148px@1920 */
 }
 
 /* Desktop: 3 sloupce s fluid gapem */
@@ -755,6 +754,60 @@ h6 {
     background: var(--color-primary);
 }
 
+
+/* ============================================================
+   REFERENCE – designer-zazitku
+   ============================================================ */
+.dz-reference {
+    display: flex;
+    align-items: flex-end;
+    padding-block:        clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);       /* 56px@360 → 148px@1920 */
+    padding-inline-start: clamp(2.5rem, calc(-4.337rem + 30.385vw), 32.125rem);   /* 40px@360 → 514px@1920 */
+    padding-inline-end:   clamp(2.5rem, calc(-2.5625rem + 22.5vw), 24.4375rem);   /* 40px@360 → 391px@1920 */
+}
+
+.dz-reference__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.dz-reference .roles__reference-dots {
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+    .dz-reference {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dz-reference .roles__reference-dots {
+        justify-content: center;
+        margin-top: 1.125rem;
+    }
+}
+
+/* ============================================================
+   KONTAKT – designer-zazitku
+   ============================================================ */
+.dz-contact {
+    padding-top:    0;
+    padding-bottom: clamp(3.5rem, calc(2.144rem + 6.026vw), 9.375rem); /* 56px@360 → 150px@1920 */
+    background-color: #ffffff;
+}
+
+.dz-contact .contact__form {
+    margin-left:  1.25rem; /* 20px mobil */
+    margin-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .dz-contact .contact__form {
+        margin-left:  clamp(1.25rem, calc(-5.745rem + 31.09vw), 31.5625rem); /* 20px@360 → 505px@1920 */
+        margin-right: clamp(1.25rem, calc(-5.745rem + 31.09vw), 31.5625rem);
+    }
+}
 
 /* ============================================================
    SEKCE ROLE
