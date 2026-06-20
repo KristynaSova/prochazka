@@ -8,38 +8,39 @@
    ============================================================ */
 :root {
     /* Barvy */
-    --color-primary:    #4B0404;
-    --color-secondary:  #FDCFCF;
-    --color-bg:         #ffffff;
-    --color-text:       #000000;
-    --color-text-body:  #333333;
+    --color-primary: #4B0404;
+    --color-secondary: #FDCFCF;
+    --color-bg: #ffffff;
+    --color-text: #000000;
+    --color-text-body: #333333;
 
     /* Tlačítka */
-    --btn-bg:           var(--color-primary);
-    --btn-text:         var(--color-secondary);
-    --btn-hover-bg:     var(--color-secondary);
-    --btn-hover-text:   var(--color-primary);
+    --btn-bg: var(--color-primary);
+    --btn-text: var(--color-secondary);
+    --btn-hover-bg: var(--color-secondary);
+    --btn-hover-text: var(--color-primary);
 
     /* Fonty */
-    --font-heading:     'Jost', sans-serif;
-    --font-body:        'Montserrat', sans-serif;
+    --font-heading: 'Jost', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
 
     /* Layout */
-    --container-width:  1456px;
-    --container-pad:    clamp(1.25rem, 5vw, 4.5rem);
+    --container-width: 1456px;
+    --container-pad: clamp(1.25rem, 5vw, 4.5rem);
 
     /* Sekce – padding */
-    --section-pad:      56px;   /* mobile */
+    --section-pad: 56px;
+    /* mobile */
 
     /* Zaoblení */
-    --radius:           20px;
+    --radius: 20px;
 
     /* Stín karet */
-    --shadow-card:      0px 4px 22px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0px 4px 22px rgba(0, 0, 0, 0.25);
 
     /* Přechody */
-    --transition:       300ms ease-out;
-    --transition-slow:  700ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition: 300ms ease-out;
+    --transition-slow: 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Desktop – větší sekce padding */
@@ -52,83 +53,100 @@
 /* ============================================================
    RESET & BASE
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
-    font-size:          16px;
-    scroll-behavior:    smooth;
-    scroll-padding-top: clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem); /* ~72px@360 → 112px@1920 */
-    overflow-x: clip; /* zabraňuje horizontálnímu scrollu bez narušení position:sticky */
+    font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem);
+    /* ~72px@360 → 112px@1920 */
+    overflow-x: clip;
+    /* zabraňuje horizontálnímu scrollu bez narušení position:sticky */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
 body {
-    font-family:              var(--font-body);
-    font-size:                1rem;
-    font-weight:              400;
-    line-height:              1.6;
-    color:                    var(--color-text-body);
-    background-color:         var(--color-bg);
-    overflow-x:               hidden;
-    -webkit-font-smoothing:   antialiased;
-    -moz-osx-font-smoothing:  grayscale;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-body);
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Minimální velikost textu na mobilu (360 px) */
 @media (max-width: 400px) {
     body {
-        font-size: 0.875rem; /* 14px */
+        font-size: 0.875rem;
+        /* 14px */
     }
 }
 
-img, picture, video, svg {
-    display:   block;
+img,
+picture,
+video,
+svg {
+    display: block;
     max-width: 100%;
 }
 
 a {
-    color:           inherit;
+    color: inherit;
     text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
 /* Text nikdy do bloku */
-p, li, blockquote, figcaption {
-    text-align:  left;
+p,
+li,
+blockquote,
+figcaption {
+    text-align: left;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.1;
-    color:       var(--color-text);
-    text-align:  left;
+    color: var(--color-text);
+    text-align: left;
 }
 
 /* ============================================================
    PŘÍSTUPNOST – přeskočit na obsah
    ============================================================ */
 .skip-link {
-    position:    absolute;
-    top:         -100%;
-    left:        0;
-    padding:     0.75rem 1.5rem;
-    background:  var(--color-primary);
-    color:       var(--color-secondary);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: var(--color-secondary);
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size:   0.875rem;
-    z-index:     9999;
-    transition:  top 0.3s ease;
+    font-size: 0.875rem;
+    z-index: 9999;
+    transition: top 0.3s ease;
 }
 
 .skip-link:focus {
@@ -139,8 +157,8 @@ h1, h2, h3, h4, h5, h6 {
    LAYOUT – KONTEJNER
    ============================================================ */
 .container {
-    width:         100%;
-    max-width:     var(--container-width);
+    width: 100%;
+    max-width: var(--container-width);
     margin-inline: auto;
     padding-inline: var(--container-pad);
 }
@@ -149,41 +167,40 @@ h1, h2, h3, h4, h5, h6 {
    TLAČÍTKA
    ============================================================ */
 .btn {
-    display:          inline-flex;
-    align-items:      center;
-    justify-content:  center;
-    gap:              0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     /* padding: 14px 17px (360px) → 18px 24px (1920px) */
-    padding:          clamp(0.875rem, calc(0.817rem + 0.256vw), 1.125rem)
-                      clamp(1.0625rem, calc(0.962rem + 0.449vw), 1.5rem);
-    font-family:      var(--font-heading);
-    font-weight:      700;
+    padding: clamp(0.875rem, calc(0.817rem + 0.256vw), 1.125rem) clamp(1.0625rem, calc(0.962rem + 0.449vw), 1.5rem);
+    font-family: var(--font-heading);
+    font-weight: 700;
     /* font-size: 16px (360px) → 20px (1920px) */
-    font-size:        clamp(1rem, calc(0.942rem + 0.256vw), 1.25rem);
-    line-height:      0.85;
-    letter-spacing:   0;
-    text-transform:   uppercase;
-    color:            var(--btn-text);
+    font-size: clamp(1rem, calc(0.942rem + 0.256vw), 1.25rem);
+    line-height: 0.85;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--btn-text);
     background-color: var(--btn-bg);
-    border:           2px solid var(--color-primary);
-    border-radius:    50px;
-    cursor:           pointer;
+    border: 2px solid var(--color-primary);
+    border-radius: 50px;
+    cursor: pointer;
     transition:
         background-color var(--transition),
-        color            var(--transition),
-        border-color     var(--transition);
+        color var(--transition),
+        border-color var(--transition);
     white-space: nowrap;
 }
 
 .btn:hover,
 .btn:focus-visible {
     background-color: var(--btn-hover-bg);
-    color:            var(--btn-hover-text);
-    border-color:     var(--color-secondary);
+    color: var(--btn-hover-text);
+    border-color: var(--color-secondary);
 }
 
 .btn:focus-visible {
-    outline:        2px solid var(--color-primary);
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
@@ -191,255 +208,305 @@ h1, h2, h3, h4, h5, h6 {
    HEADER / NAVIGACE
    ============================================================ */
 .site-header {
-    position:         fixed;
-    top:              0;
-    left:             0;
-    right:            0;
-    z-index:          1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     background-color: var(--color-bg);
-    border-bottom:    1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav {
-    display:        flex;
-    align-items:    center;
-    max-width:      none;
-    margin-inline:  0;
-    padding-block:  clamp(1rem, calc(0.654rem + 1.538vw), 2.5rem);   /* 16px → 40px */
-    padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem); /* 40px@768px → 376px@1920px, gentle slope */
+    display: flex;
+    align-items: center;
+    max-width: none;
+    margin-inline: 0;
+    padding-block: clamp(1rem, calc(0.654rem + 1.538vw), 2.5rem);
+    /* 16px → 40px */
+    padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem);
+    /* 40px@768px → 376px@1920px, gentle slope */
 }
 
 /* ── Instagram – vlevo, jen desktop ── */
 .nav__instagram {
-    display:        none;
-    flex:           1;
-    font-family:    var(--font-heading);
-    font-weight:    400;
-    font-size:      1rem;
-    line-height:    1;
+    display: none;
+    flex: 1;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
     text-transform: uppercase;
-    color:          var(--color-primary);
-    transition:     opacity var(--transition);
+    color: var(--color-primary);
+    transition: opacity var(--transition);
 }
+
 .nav__instagram:hover,
-.nav__instagram:focus-visible { opacity: 0.55; }
 .nav__instagram:focus-visible {
-    outline:        2px solid var(--color-primary);
+    opacity: 0.55;
+}
+
+.nav__instagram:focus-visible {
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
 /* ── Logo – jen mobil ── */
 .nav__logo {
-    display:     flex;
+    display: flex;
     align-items: center;
-    flex:        1;
+    flex: 1;
 }
+
 .nav__logo-img {
-    width:  134px;
+    width: 134px;
     height: auto;
 }
 
 /* ── Hlavní menu ── */
 .nav__menu {
-    display:     none;
+    display: none;
     align-items: center;
-    gap:         clamp(1.5rem, calc(0.577rem + 4.103vw), 5.5rem); /* 24px → 88px */
+    gap: clamp(1.5rem, calc(0.577rem + 4.103vw), 5.5rem);
+    /* 24px → 88px */
 }
+
 .nav__menu-item a {
-    font-family:    var(--font-heading);
-    font-weight:    400;
-    font-size:      1rem;
-    line-height:    1;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
     text-transform: uppercase;
-    color:          var(--color-primary);
-    transition:     opacity var(--transition);
+    color: var(--color-primary);
+    transition: opacity var(--transition);
 }
+
 .nav__menu-item a:hover,
-.nav__menu-item a:focus-visible { opacity: 0.55; }
 .nav__menu-item a:focus-visible {
-    outline:        2px solid var(--color-primary);
+    opacity: 0.55;
+}
+
+.nav__menu-item a:focus-visible {
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
 /* ── Pravá část ── */
 .nav__right {
-    flex:            1;
-    display:         flex;
-    align-items:     center;
+    flex: 1;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
 
 /* ── Jazykový přepínač – jen desktop ── */
 .nav__lang-link {
-    display:        none;
-    font-family:    var(--font-heading);
-    font-weight:    400;
-    font-size:      1rem;
-    line-height:    1;
+    display: none;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
     text-transform: uppercase;
-    color:          var(--color-primary);
-    transition:     opacity var(--transition);
+    color: var(--color-primary);
+    transition: opacity var(--transition);
 }
+
 .nav__lang-link:hover,
-.nav__lang-link:focus-visible { opacity: 0.55; }
 .nav__lang-link:focus-visible {
-    outline:        2px solid var(--color-primary);
+    opacity: 0.55;
+}
+
+.nav__lang-link:focus-visible {
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
 /* ── Hamburger ── */
 .nav__toggle {
-    display:         flex;
-    flex-direction:  column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap:             5px;
-    background:      none;
-    border:          none;
-    cursor:          pointer;
-    padding:         0.5rem;
-    flex-shrink:     0;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-shrink: 0;
 }
+
 .nav__toggle:focus-visible {
-    outline:        2px solid var(--color-primary);
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
+
 .nav__toggle-bar {
-    display:          block;
-    width:            44px;
-    height:           1.83px;
-    border-radius:    20px;
+    display: block;
+    width: 44px;
+    height: 1.83px;
+    border-radius: 20px;
     background-color: var(--color-primary);
 }
 
 /* ── Desktop ≥ 1024px ── */
 @media (min-width: 1024px) {
-    .nav__logo       { display: none; }
-    .nav__instagram  { display: block; }
-    .nav__menu       { display: flex; }
-    .nav__lang-link  { display: block; }
-    .nav__toggle     { display: none; }
+    .nav__logo {
+        display: none;
+    }
+
+    .nav__instagram {
+        display: block;
+    }
+
+    .nav__menu {
+        display: flex;
+    }
+
+    .nav__lang-link {
+        display: block;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
 }
 
 /* ============================================================
    MOBILNÍ MENU OVERLAY
    ============================================================ */
 .mobile-menu {
-    position:         fixed;
-    inset:            0;
-    z-index:          1001;
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
     background-color: var(--color-primary);
-    display:          flex;
-    flex-direction:   column;
-    padding:          40px 40px 100px;
-    visibility:       hidden;
-    opacity:          0;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 100px;
+    visibility: hidden;
+    opacity: 0;
     transition:
-        opacity    300ms ease-out,
-        visibility 0ms   ease-out 300ms;
+        opacity 300ms ease-out,
+        visibility 0ms ease-out 300ms;
 }
+
 .mobile-menu.is-open {
     visibility: visible;
-    opacity:    1;
+    opacity: 1;
     transition:
-        opacity    300ms ease-out,
-        visibility 0ms   ease-out 0ms;
+        opacity 300ms ease-out,
+        visibility 0ms ease-out 0ms;
 }
 
 /* Řádek s křížkem – zarovnání vpravo */
 .mobile-menu__top {
-    display:         flex;
+    display: flex;
     justify-content: flex-end;
 }
 
 .mobile-menu__close {
-    display:         flex;
-    align-items:     center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    position:        relative;
-    width:           33px;
-    height:          33px;
-    background:      none;
-    border:          none;
-    cursor:          pointer;
-    padding:         0;
-    flex-shrink:     0;
-    transition:      opacity var(--transition);
+    position: relative;
+    width: 33px;
+    height: 33px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: opacity var(--transition);
 }
 
 .mobile-menu__close-bar {
-    display:          block;
-    position:         absolute;
-    width:            33px;
-    height:           2px;
-    border-radius:    20px;
+    display: block;
+    position: absolute;
+    width: 33px;
+    height: 2px;
+    border-radius: 20px;
     background-color: var(--color-secondary);
 }
 
-.mobile-menu__close-bar:first-child { transform: rotate(45deg); }
-.mobile-menu__close-bar:last-child  { transform: rotate(-45deg); }
+.mobile-menu__close-bar:first-child {
+    transform: rotate(45deg);
+}
+
+.mobile-menu__close-bar:last-child {
+    transform: rotate(-45deg);
+}
+
 .mobile-menu__close:hover,
-.mobile-menu__close:focus-visible { opacity: 0.7; }
 .mobile-menu__close:focus-visible {
-    outline:        2px solid var(--color-secondary);
+    opacity: 0.7;
+}
+
+.mobile-menu__close:focus-visible {
+    outline: 2px solid var(--color-secondary);
     outline-offset: 3px;
 }
 
 /* Logo – centrované, 34px od křížku */
 .mobile-menu__logo {
-    display:         flex;
+    display: flex;
     justify-content: center;
-    margin-top:      34px;
+    margin-top: 34px;
 }
+
 .mobile-menu__logo img {
-    width:     219px;
+    width: 219px;
     max-width: 100%;
-    height:    auto;
+    height: auto;
 }
 
 /* Navigace – 70px od loga */
 .mobile-menu__nav {
-    margin-top:  70px;
-    text-align:  center;
+    margin-top: 70px;
+    text-align: center;
 }
+
 .mobile-menu__nav ul {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    gap:            36px;
+    gap: 36px;
 }
+
 .mobile-menu__nav a {
-    font-family:    var(--font-heading);
-    font-weight:    500;
-    font-size:      1.125rem; /* 18px */
-    line-height:    1;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1;
     letter-spacing: 0;
     text-transform: uppercase;
-    color:          var(--color-secondary);
+    color: var(--color-secondary);
 }
+
 .mobile-menu__nav a:focus-visible {
-    outline:        2px solid var(--color-secondary);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 3px;
 }
 
 /* Footer – automaticky tlačen na spodek */
 .mobile-menu__footer {
-    display:         flex;
-    align-items:     center;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top:      auto;
-    padding-top:     clamp(1.5rem, 4vh, 2.5rem);
+    margin-top: auto;
+    padding-top: clamp(1.5rem, 4vh, 2.5rem);
 }
+
 .mobile-menu__instagram,
 .mobile-menu__lang {
-    font-family:    var(--font-heading);
-    font-weight:    400;
-    font-size:      1rem;
-    line-height:    1;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
     text-transform: uppercase;
-    color:          var(--color-secondary);
+    color: var(--color-secondary);
 }
+
 .mobile-menu__instagram:focus-visible,
 .mobile-menu__lang:focus-visible {
-    outline:        2px solid var(--color-secondary);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 3px;
 }
 
@@ -447,47 +514,47 @@ h1, h2, h3, h4, h5, h6 {
    HERO SEKCE
    ============================================================ */
 .hero {
-    position:  relative;
-    width:     100%;
-    height:    100svh;
+    position: relative;
+    width: 100%;
+    height: 100svh;
     min-height: 560px;
-    overflow:  hidden;
-    display:   flex;
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
 }
 
 /* Médium – fotografie na pozadí */
 .hero__media {
     position: absolute;
-    inset:    0;
-    z-index:  0;
+    inset: 0;
+    z-index: 0;
 }
 
 .hero__image {
-    position:        absolute;
-    inset:           0;
-    width:           100%;
-    height:          100%;
-    object-fit:      cover;
-    object-position: center 20%; /* mobil – zachová kompozici portrétu */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    /* mobil – zachová kompozici portrétu */
 }
 
 @media (min-width: 1024px) {
     .hero__image {
-        object-position: center top; /* desktop – vždy zobrazí vršek obrázku, hlava nezmizí */
+        object-position: center top;
+        /* desktop – vždy zobrazí vršek obrázku, hlava nezmizí */
     }
 }
 
 /* Tmavý přechod přes fotografii */
 .hero__overlay {
     position: absolute;
-    inset:    0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.10) 0%,
-        rgba(0, 0, 0, 0.20) 35%,
-        rgba(0, 0, 0, 0.65) 100%
-    );
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.10) 0%,
+            rgba(0, 0, 0, 0.20) 35%,
+            rgba(0, 0, 0, 0.65) 100%);
 }
 
 /* Desktop – přidáme tmavší levou část pro lepší čitelnost titulu */
@@ -497,52 +564,184 @@ h1, h2, h3, h4, h5, h6 {
             linear-gradient(to right,
                 rgba(0, 0, 0, 0.50) 0%,
                 rgba(0, 0, 0, 0.15) 50%,
-                rgba(0, 0, 0, 0.05) 100%
-            ),
+                rgba(0, 0, 0, 0.05) 100%),
             linear-gradient(to bottom,
                 rgba(0, 0, 0, 0.05) 0%,
-                rgba(0, 0, 0, 0.50) 100%
-            );
+                rgba(0, 0, 0, 0.50) 100%);
     }
+}
+
+/* Flat overlay – podstránky (designer-zazitku apod.) */
+.hero__overlay--flat {
+    background: rgba(0, 0, 0, 0.40);
 }
 
 /* Podpis autora – nad fotografií, relativní pozice vůči .hero__media */
 .hero__signature {
-    display:        none; /* skrytý na mobilu */
-    position:       absolute;
-    right:          11.1%;
-    top:            clamp(5.5rem, 17.4vh, 12rem); /* 188px od vrchu při 1080px výšce */
-    width:          clamp(9rem, 28.4vw, 34.0625rem); /* 144px → 545px */
-    height:         auto;
+    display: none;
+    /* skrytý na mobilu */
+    position: absolute;
+    right: 11.1%;
+    top: clamp(5.5rem, 17.4vh, 12rem);
+    /* 188px od vrchu při 1080px výšce */
+    width: clamp(9rem, 28.4vw, 34.0625rem);
+    /* 144px → 545px */
+    height: auto;
     pointer-events: none;
-    user-select:    none;
+    user-select: none;
 }
 
 @media (min-width: 1024px) {
-    .hero__signature { display: block; }
+    .hero__signature {
+        display: block;
+    }
 }
 
 /* Textový obsah hero */
 .hero__content {
-    position:       relative;
-    z-index:        1;
-    flex:           1;
-    display:        flex;
-    align-items:    flex-end;
-    max-width:      none;
-    margin-inline:  0;
-    padding-bottom: clamp(4rem, calc(2.375rem + 7.244vw), 11.0625rem); /* 64px → 177px */
-    padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem); /* 40px@768px → 376px@1920px, gentle slope */
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    max-width: none;
+    margin-inline: 0;
+    padding-bottom: clamp(4rem, calc(2.375rem + 7.244vw), 11.0625rem);
+    /* 64px → 177px */
+    padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem);
+    /* 40px@768px → 376px@1920px, gentle slope */
 }
 
 /* H1 – fluidní typografie: 40px (360px) → 80px (1920px) */
 .hero__title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
-    font-size:      clamp(2.5rem, 1.912rem + 2.564vw, 5rem);
-    line-height:    clamp(3.125rem, 2.537rem + 2.564vw, 5.625rem);
-    color:          #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 1.912rem + 2.564vw, 5rem);
+    line-height: clamp(3.125rem, 2.537rem + 2.564vw, 5.625rem);
+    color: #ffffff;
     text-transform: uppercase;
+}
+
+/* Popis pod H1 – pouze na podstránkách (designer-zazitku apod.) */
+.hero__desc {
+    margin-top: 1rem;
+    /* 16px – fixní na všech breakpointech */
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    /* 16px – fixní na všech breakpointech */
+    line-height: 1.5625;
+    /* 25px / 16px */
+    color: #ffffff;
+    max-width: 38rem;
+}
+
+/* Subpage hero: výška je auto (ne 100svh), obsah zarovnán od shora */
+.hero--subpage {
+    height: auto;
+    margin-top:  clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem); /* stejná hodnota jako scroll-padding-top = výška headeru */
+    box-shadow:  0 4px 22px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hero--subpage .hero__image {
+    object-position: center 20%;
+}
+
+.hero--subpage .hero__content {
+    align-items: flex-start;
+    padding-top: clamp(34.4375rem, calc(30.37rem + 18.077vw), 52.0625rem); /* 551px@360 → 833px@1920 */
+    padding-bottom: clamp(4rem, calc(2.933rem + 4.744vw), 8.625rem);        /* 64px@360 → 138px@1920 */
+}
+
+/* Na mobilu: desc skrytý uvnitř hero, zobrazí se ve vlastním bloku pod ním */
+@media (max-width: 767px) {
+    .hero--subpage .hero__desc {
+        display: none;
+    }
+}
+
+/* Blok s popisem pod hero – jen mobil */
+.subpage-intro {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .subpage-intro {
+        display: block;
+        padding-inline: 2.5rem;  /* 40px */
+        padding-block:  3.5rem;  /* 56px */
+    }
+}
+
+.subpage-intro__text {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size:   1rem;
+    line-height: 1.5625;
+    color:       var(--color-text-body);
+}
+
+/* ============================================================
+   FOTO GRID – designer-zazitku
+   Desktop: 3 sloupce vedle sebe | Mobile: slider
+   ============================================================ */
+.dz-slider {
+    padding-inline: clamp(1.25rem, calc(-1.836rem + 13.718vw), 14.625rem); /* 20px@360 → 234px@1920 */
+    padding-top:    clamp(0rem, calc(-2.134rem + 9.487vw), 9.25rem);        /* 0px@360 → 148px@1920 */
+    padding-bottom: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);       /* 56px@360 → 148px@1920 */
+}
+
+/* Desktop: 3 sloupce s fluid gapem */
+.dz-slider__track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.5rem, calc(0.024rem + 2.115vw), 2.5625rem); /* 8px@360 → 41px@1920 */
+}
+
+.dz-slider__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile: 1 sloupec, gap 16px */
+@media (max-width: 767px) {
+    .dz-slider__track {
+        grid-template-columns: 1fr;
+        gap: 1rem; /* 16px */
+    }
+}
+
+/* Navigační tečky – stejný styl jako u referencí */
+.dz-slider__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.125rem; /* 18px desktop */
+}
+
+@media (max-width: 767px) {
+    .dz-slider__dots {
+        margin-top: 1.5rem; /* 24px mobile */
+    }
+}
+
+.dz-slider__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: var(--color-secondary);
+    cursor: default;
+    flex-shrink: 0;
+}
+
+.dz-slider__dot--active,
+.dz-slider__dot[aria-current="true"] {
+    background: var(--color-primary);
 }
 
 
@@ -550,17 +749,20 @@ h1, h2, h3, h4, h5, h6 {
    SEKCE ROLE
    ============================================================ */
 .roles {
-    padding-block:    clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem); /* 56px → 148px */
+    padding-block: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
+    /* 56px → 148px */
     background-color: var(--color-bg);
-    overflow-x:       hidden; /* zabrání přetečení translateX animací karet na mobilu */
+    overflow-x: hidden;
+    /* zabrání přetečení translateX animací karet na mobilu */
 }
 
 /* Grid: mobile = 1 sloupec, 40px odsazení; desktop = 2 sloupce full-bleed */
 .roles__grid {
-    display:               grid;
+    display: grid;
     grid-template-columns: 1fr;
-    gap:                   clamp(1.5rem, 4vw, 2.5rem);
-    padding-inline:        2.5rem; /* 40px – mobil */
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    padding-inline: 2.5rem;
+    /* 40px – mobil */
 }
 
 /* Na mobilu se sloupce chovají jako display: contents, abychom mohli korigovat pořadí prvků */
@@ -588,121 +790,147 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
     .roles__grid {
         grid-template-columns: 1fr 1fr;
-        column-gap:            clamp(3rem, 11.198vw, 13.125rem);
-        row-gap:               0;
-        padding-inline:        0; /* karty sahají k okrajům sekce */
+        column-gap: clamp(3rem, 11.198vw, 13.125rem);
+        row-gap: 0;
+        padding-inline: 0;
+        /* karty sahají k okrajům sekce */
     }
+
     .roles__col-left {
-        display:               flex;
-        flex-direction:        column;
+        display: flex;
+        flex-direction: column;
     }
+
     .roles__col-right {
-        display:               flex;
-        flex-direction:        column;
-        gap:                   clamp(3rem, 11.198vw, 13.125rem);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3rem, 11.198vw, 13.125rem);
     }
+
     /* Intro: zarovnán nahoru, levý okraj = auto margin kontejneru (232px při 1920px) */
     .roles__intro {
-        order:                unset;
-        align-self:           start;
-        margin-top:           clamp(2.5rem, calc(-2.33rem + 10.07vw), 9.75rem);
-        padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem); /* 40px@768px → 232px@1920px, gentle slope */
+        order: unset;
+        align-self: start;
+        margin-top: clamp(2.5rem, calc(-2.33rem + 10.07vw), 9.75rem);
+        padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem);
+        /* 40px@768px → 232px@1920px, gentle slope */
     }
+
     /* Skladatel */
     .roles__card--skladatel {
-        order:                unset;
+        order: unset;
     }
+
     /* Designér karta: horní hrana ~60px nad nadpisem Skladatele (1920px) */
     .roles__card--designer {
-        order:                unset;
-        margin-top:           clamp(3rem, calc(-4.16rem + 14.93vw), 13.25rem); /* ~212px@1920px */
+        order: unset;
+        margin-top: clamp(3rem, calc(-4.16rem + 14.93vw), 13.25rem);
+        /* ~212px@1920px */
     }
+
     .roles__card--designer .roles__card-content {
-        justify-content:      flex-end;
-        padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem); /* shodné s intro */
+        justify-content: flex-end;
+        padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem);
+        /* shodné s intro */
         /* 193px na 1920px → plynule škáluje na ~40px na 768px */
-        padding-inline-end:   clamp(2.5rem, calc(-3.87rem + 13.28vw), 12.0625rem);
+        padding-inline-end: clamp(2.5rem, calc(-3.87rem + 13.28vw), 12.0625rem);
         /* 80px na 1920px → plynule škáluje na ~40px na 768px */
-        padding-block-end:    clamp(2.5rem, calc(0.83rem + 3.47vw), 5rem);
+        padding-block-end: clamp(2.5rem, calc(0.83rem + 3.47vw), 5rem);
     }
+
     /* Skladatel + Kreativní: 80px left, 80px bottom při 1920px */
     .roles__card--skladatel .roles__card-content,
     .roles__card--konzultant .roles__card-content {
-        padding-inline-start: clamp(1.25rem, calc(0.385rem + 3.846vw), 5rem); /* 20px → 80px */
-        padding-block-end:    clamp(2rem, calc(1.308rem + 3.077vw), 5rem);    /* 32px → 80px */
+        padding-inline-start: clamp(1.25rem, calc(0.385rem + 3.846vw), 5rem);
+        /* 20px → 80px */
+        padding-block-end: clamp(2rem, calc(1.308rem + 3.077vw), 5rem);
+        /* 32px → 80px */
     }
-    .roles__card--skladatel .roles__card-text  { max-width: 20.125rem; } /* 322px */
-    .roles__card--konzultant .roles__card-text { max-width: 24.0625rem; } /* 385px */
+
+    .roles__card--skladatel .roles__card-text {
+        max-width: 20.125rem;
+    }
+
+    /* 322px */
+    .roles__card--konzultant .roles__card-text {
+        max-width: 24.0625rem;
+    }
+
+    /* 385px */
     /* Kreativní konzultant */
     .roles__card--konzultant {
-        order:                unset;
+        order: unset;
     }
 }
 
 /* ── Intro blok ── */
 .roles__intro {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    align-items:    flex-start;
+    align-items: flex-start;
 }
 
 .roles__intro-title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
-    font-size:      clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem); /* 30px → 80px */
-    line-height:    1.05;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
+    /* 30px → 80px */
+    line-height: 1.05;
     text-transform: uppercase;
-    color:          var(--color-text);
-    margin-bottom:  clamp(1rem, 2.5vw, 1.75rem);
+    color: var(--color-text);
+    margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
 }
 
 .roles__intro-text {
-    font-family:    var(--font-body);
-    font-weight:    400;
-    font-size:      clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem); /* 14px → 16px */
-    line-height:    1.6;
-    color:          var(--color-text); /* #000000 */
-    max-width:      26rem;
-    margin-bottom:  clamp(1.5rem, 3.125vw, 2.5rem);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    /* 14px → 16px */
+    line-height: 1.6;
+    color: var(--color-text);
+    /* #000000 */
+    max-width: 26rem;
+    margin-bottom: clamp(1.5rem, 3.125vw, 2.5rem);
 }
 
 /* ── Karty ── */
 .roles__card {
-    position:     relative;
-    overflow:     hidden;
-    aspect-ratio: 2/3; /* portrait – odpovídá Figma výšce 1295px při šířce sloupce 855px */
-    box-shadow:   0 4px 22px 0 rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 2/3;
+    /* portrait – odpovídá Figma výšce 1295px při šířce sloupce 855px */
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
 }
 
 .roles__card-media {
     position: absolute;
-    inset:    0;
+    inset: 0;
     overflow: hidden;
 }
 
 .roles__card-img {
-    position:   absolute;
-    inset:      0;
-    width:      100%;
-    height:     100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .roles__card-overlay {
-    position:   absolute;
-    inset:      0;
+    position: absolute;
+    inset: 0;
     background: rgba(0, 0, 0, 0.30);
 }
 
 .roles__card-content {
-    position:        relative;
-    z-index:         1;
-    height:          100%;
-    display:         flex;
-    flex-direction:  column;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    padding:         clamp(1.5rem, 2.604vw, 2.5rem);
+    padding: clamp(1.5rem, 2.604vw, 2.5rem);
 }
 
 /* ── Mobilní layout Sekce 2 (max 767px) ── */
@@ -710,7 +938,8 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Grid: plná šířka, 56px mezery; horizontální odsazení spravují bloky samy */
     .roles__grid {
-        gap:            3.5rem; /* 56px */
+        gap: 3.5rem;
+        /* 56px */
         padding-inline: 0;
     }
 
@@ -718,54 +947,68 @@ h1, h2, h3, h4, h5, h6 {
     .roles__intro {
         padding-inline: 2.5rem;
     }
+
     .roles__intro-text {
-        margin-bottom: 2rem; /* 32px */
+        margin-bottom: 2rem;
+        /* 32px */
     }
-    .roles__intro > .btn {
+
+    .roles__intro>.btn {
         align-self: center;
     }
 
     /* SKLADATEL – pravý okraj, 40px volný prostor vlevo */
     .roles__card--skladatel {
         margin-inline-start: 2.5rem;
-        margin-inline-end:   0;
+        margin-inline-end: 0;
     }
 
     /* DESIGNÉR – levý okraj, 40px volný prostor vpravo */
     .roles__card--designer {
         margin-inline-start: 0;
-        margin-inline-end:   2.5rem;
+        margin-inline-end: 2.5rem;
     }
 
     /* KONZULTANT – pravý okraj, 40px volný prostor vlevo */
     .roles__card--konzultant {
         margin-inline-start: 2.5rem;
-        margin-inline-end:   0;
+        margin-inline-end: 0;
     }
 
     /* Reference: vždy poslední, 40px z obou stran; margin-top řeší grid gap */
     .roles__reference {
-        order:       5;
-        margin-top:  0;
+        order: 5;
+        margin-top: 0;
         padding-inline: 2.5rem;
     }
+
     .roles__reference-dots {
         justify-content: center;
-        margin-top:      1.5rem; /* 24px na mobilu (desktop: 18px) */
+        margin-top: 1.5rem;
+        /* 24px na mobilu (desktop: 18px) */
     }
 
     /* Padding obsahu karet: 40px vlevo, 30px vpravo, 32px dole */
     .roles__card-content {
-        padding-inline-start: 2.5rem;   /* 40px */
-        padding-inline-end:   1.875rem; /* 30px */
-        padding-block-end:    2rem;     /* 32px */
+        padding-inline-start: 2.5rem;
+        /* 40px */
+        padding-inline-end: 1.875rem;
+        /* 30px */
+        padding-block-end: 2rem;
+        /* 32px */
     }
 
     /* Animace karet na mobilu: čistě horizontální posun, 700ms ease-out */
-    [data-animate="from-right"] { transform: translateX(40px); }
-    [data-animate="from-left"]  { transform: translateX(-40px); }
+    [data-animate="from-right"] {
+        transform: translateX(40px);
+    }
+
+    [data-animate="from-left"] {
+        transform: translateX(-40px);
+    }
+
     .roles__card[data-animate] {
-        transition-duration:        700ms;
+        transition-duration: 700ms;
         transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 }
@@ -773,29 +1016,32 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .roles__card-content .btn {
-    display:    inline-flex;
+    display: inline-flex;
     align-self: flex-start;
-    padding:    1rem 1.8125rem; /* 16px 29px */
+    padding: 1rem 1.8125rem;
+    /* 16px 29px */
 }
 
 .roles__card-title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
-    font-size:      clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem); /* 28px → 52px */
-    line-height:    1.05;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem);
+    /* 28px → 52px */
+    line-height: 1.05;
     text-transform: uppercase;
-    color:          #ffffff;
+    color: #ffffff;
     /* 16px (360px) → 24px (1920px) */
-    margin-bottom:  clamp(1rem, calc(0.88rem + 0.513vw), 1.5rem);
+    margin-bottom: clamp(1rem, calc(0.88rem + 0.513vw), 1.5rem);
 }
 
 .roles__card-text {
-    font-family:    var(--font-body);
-    font-weight:    400;
-    font-size:      clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
-    line-height:    1.6;
-    color:          rgba(255, 255, 255, 0.85);
-    margin-bottom:  clamp(1rem, calc(0.86rem + 0.513vw), 1.5rem); /* 16px → 24px */
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: clamp(1rem, calc(0.86rem + 0.513vw), 1.5rem);
+    /* 16px → 24px */
 }
 
 /* Hover: přiblížení fotografie – jen na zařízeních s kurzorem */
@@ -807,19 +1053,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Animace – slide + fade při vstupu do viewportu ── */
 [data-animate] {
-    opacity:    0;
+    opacity: 0;
     transition:
-        opacity   1400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 1400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
         transform 1400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-[data-animate="from-right"] { transform: translateX(40px)  translateY(16px); }
-[data-animate="from-left"]  { transform: translateX(-40px) translateY(16px); }
-[data-animate].is-visible   { opacity: 1; transform: translateX(0) translateY(0); }
+
+[data-animate="from-right"] {
+    transform: translateX(40px) translateY(16px);
+}
+
+[data-animate="from-left"] {
+    transform: translateX(-40px) translateY(16px);
+}
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
 
 @media (prefers-reduced-motion: reduce) {
     [data-animate] {
-        opacity:    1;
-        transform:  none;
+        opacity: 1;
+        transform: none;
         transition: none;
     }
 }
@@ -829,52 +1085,64 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 
 .roles__reference {
-    margin-top:           0;
-    padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem); /* zarovnání s intro */
-    padding-inline-end:   clamp(2rem, 4vw, 4.5rem);
+    margin-top: 0;
+    padding-inline-start: clamp(2.5rem, calc(-5.5rem + 16.667vw), 14.5rem);
+    /* zarovnání s intro */
+    padding-inline-end: clamp(2rem, 4vw, 4.5rem);
 }
 
 @media (min-width: 768px) {
-    .roles__reference       { margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); } /* 48px@768 → 140px@1920 */
-    .roles__reference-title { margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem); } /* 48px@768 → 140px@1920 */
+    .roles__reference {
+        margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem);
+    }
+
+    /* 48px@768 → 140px@1920 */
+    .roles__reference-title {
+        margin-top: clamp(3rem, calc(-0.84rem + 8vw), 8.75rem);
+    }
+
+    /* 48px@768 → 140px@1920 */
 }
 
 .roles__reference-title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
-    font-size:      clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem); /* 28px → 52px */
-    line-height:    1.05;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem);
+    /* 28px → 52px */
+    line-height: 1.05;
     letter-spacing: -0.02em;
     text-transform: uppercase;
-    color:          var(--color-text);
-    margin-block:   0 1.5rem;
+    color: var(--color-text);
+    margin-block: 0 1.5rem;
 }
 
 .roles__reference-slider {
-    overflow:   hidden;
+    overflow: hidden;
     transition: height 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .roles__reference-track {
-    display:     flex;
+    display: flex;
     align-items: flex-start;
-    transition:  transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .roles__reference-slide {
-    flex:    0 0 100%;
-    margin:  0;
+    flex: 0 0 100%;
+    margin: 0;
     padding: 0;
 }
 
 .roles__reference-text {
-    font-family:   var(--font-body);
-    font-weight:   400;
-    font-size:     clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem); /* 14px → 16px */
-    line-height:   1.7;
-    color:         var(--color-text);
-    max-width:     31.5625rem; /* 505px */
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    /* 14px → 16px */
+    line-height: 1.7;
+    color: var(--color-text);
+    max-width: 31.5625rem;
+    /* 505px */
     margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -883,32 +1151,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .roles__reference-author {
-    display:        block;
-    font-family:    var(--font-heading);
-    font-weight:    700;
-    font-size:      1rem;       /* 16px */
-    line-height:    1.5625;     /* 25px */
-    font-style:     normal;
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5625;
+    /* 25px */
+    font-style: normal;
     letter-spacing: 0;
-    color:          var(--color-text);
+    color: var(--color-text);
 }
 
 .roles__reference-dots {
-    display:    flex;
-    gap:        0.5rem;
-    margin-top: 1.125rem; /* 18px */
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.125rem;
+    /* 18px */
 }
 
 .roles__reference-dot {
-    width:         0.5rem; /* 8px */
-    height:        0.5rem;
+    width: 0.5rem;
+    /* 8px */
+    height: 0.5rem;
     border-radius: 50%;
-    border:        none;
-    background:    var(--color-secondary);
-    cursor:        pointer;
-    padding:       0;
-    transition:    background var(--transition);
-    flex-shrink:   0;
+    border: none;
+    background: var(--color-secondary);
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition);
+    flex-shrink: 0;
 }
 
 .roles__reference-dot--active {
@@ -920,7 +1192,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .roles__reference-dot:focus-visible {
-    outline:        2px solid var(--color-primary);
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
 }
 
@@ -936,97 +1208,112 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 
 .quote-section {
-    position:       relative;
-    overflow:       hidden;
+    position: relative;
+    overflow: hidden;
     /* 600 px@360 px → 1290 px@1920 px (lineární clamp, bez závislosti na svh/dvh) */
-    min-height:     clamp(37.5rem, calc(27.548rem + 44.231vw), 80.625rem);
-    display:        flex;
+    min-height: clamp(37.5rem, calc(27.548rem + 44.231vw), 80.625rem);
+    display: flex;
     flex-direction: column;
 }
 
 .quote-section__parallax {
-    position:    absolute;
-    top:         -15%;   /* 15 % přesah nahoře + dole = buffer pro parallax pohyb */
-    left:        0;
-    width:       100%;
-    height:      130%;
-    z-index:     0;
+    position: absolute;
+    top: -15%;
+    /* 15 % přesah nahoře + dole = buffer pro parallax pohyb */
+    left: 0;
+    width: 100%;
+    height: 130%;
+    z-index: 0;
     will-change: transform;
-    transform:   translateZ(0);
+    transform: translateZ(0);
 }
 
 .quote-section__img {
-    position:   absolute;
-    inset:      0;
-    width:      100%;
-    height:     100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display:    block;
+    display: block;
 }
 
 .quote-section__overlay {
-    position:   absolute;
-    inset:      0;
-    z-index:    1;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     background: rgba(0, 0, 0, 0.40);
 }
 
 .quote-section__content {
-    position:             relative;
-    z-index:              2;
-    flex:                 1;
-    display:              flex;
-    align-items:          flex-end;
-    padding-bottom:       clamp(1.875rem, 8.333vw, 10rem);                    /* 30px@360px → 160px@1920px */
-    padding-inline-start: clamp(1.875rem, calc(-1rem + 12.756vw), 14.3125rem); /* 30px@360px → 229px@1920px */
-    padding-inline-end:   clamp(1.875rem, 5vw, 9rem);
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: clamp(1.875rem, 8.333vw, 10rem);
+    /* 30px@360px → 160px@1920px */
+    padding-inline-start: clamp(1.875rem, calc(-1rem + 12.756vw), 14.3125rem);
+    /* 30px@360px → 229px@1920px */
+    padding-inline-end: clamp(1.875rem, 5vw, 9rem);
 }
 
 .quote-section__quote,
 .quote-section__quote p {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size:   clamp(1.875rem, calc(1.298rem + 2.564vw), 4.375rem); /* 30px@360px → 70px@1920px */
-    line-height: clamp(2.1875rem, calc(1.538rem + 2.885vw), 5rem);  /* 35px@360px → 80px@1920px */
-    color:       var(--color-secondary); /* #FDCFCF */
-    margin:      0;
-    padding:     0;
+    font-size: clamp(1.875rem, calc(1.298rem + 2.564vw), 4.375rem);
+    /* 30px@360px → 70px@1920px */
+    line-height: clamp(2.1875rem, calc(1.538rem + 2.885vw), 5rem);
+    /* 35px@360px → 80px@1920px */
+    color: var(--color-secondary);
+    /* #FDCFCF */
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================================
    SEKCE 4 – AUTORSKÁ TVORBA
    ============================================================ */
 .works {
-    padding-block:    clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem); /* 56px → 148px */
-    padding-inline:   clamp(1.25rem, calc(-1.808rem + 13.59vw), 14.5rem); /* 20px@360 → 232px@1920 */
+    padding-block: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
+    /* 56px → 148px */
+    padding-inline: clamp(1.25rem, calc(-1.808rem + 13.59vw), 14.5rem);
+    /* 20px@360 → 232px@1920 */
     background-color: #ffffff;
 }
 
 .works__title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
+    font-family: var(--font-heading);
+    font-weight: 600;
     text-transform: uppercase;
-    font-size:      clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem); /* 30px@360 → 80px@1920 */
-    line-height:    1.125;                                            /* 90px@desktop */
-    color:          var(--color-text);
-    margin-bottom:  1.5rem; /* 24px */
+    font-size: clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
+    /* 30px@360 → 80px@1920 */
+    line-height: 1.125;
+    /* 90px@desktop */
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    /* 24px */
 }
 
 /* Grid: mobile 1 sl. → tablet 2 sl. → desktop 3 sl. */
 .works__grid {
-    display:               grid;
+    display: grid;
     grid-template-columns: 1fr;
-    gap:                   clamp(1rem, 2vw, 1.5rem);
-    margin-bottom:         clamp(2rem, calc(1.452rem + 2.436vw), 4.375rem); /* 32px@360 → 70px@1920 */
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: clamp(2rem, calc(1.452rem + 2.436vw), 4.375rem);
+    /* 32px@360 → 70px@1920 */
 }
 
 @media (max-width: 767px) {
     #autorska-tvorba .works__card:nth-child(n+3) {
         display: none;
     }
+
     .works__card-body {
-        padding-inline: 1.25rem; /* 20px */
-        padding-bottom: 2rem;    /* 32px */
+        padding-inline: 1.25rem;
+        /* 20px */
+        padding-bottom: 2rem;
+        /* 32px */
     }
 }
 
@@ -1044,23 +1331,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Karta */
 .works__card {
-    background:     #ffffff;
-    border-radius:  1.25rem;                        /* 20px */
-    overflow:       hidden;
-    box-shadow:     0px 4px 22px rgba(0, 0, 0, 0.25);
-    transition:     background-color 400ms ease-out, transform 400ms ease-out;
-    display:        flex;
+    background: #ffffff;
+    border-radius: 1.25rem;
+    /* 20px */
+    overflow: hidden;
+    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+    transition: background-color 400ms ease-out, transform 400ms ease-out;
+    display: flex;
     flex-direction: column;
 }
 
 @media (hover: hover) {
     .works__card:hover {
         background-color: var(--color-primary);
-        transform:        scale(0.97);
+        transform: scale(0.97);
     }
+
     .works__card:hover .works__card-img {
         transform: scale(1.05);
     }
+
     .works__card:hover .works__card-title,
     .works__card:hover .works__card-text,
     .works__card:hover .works__card-credit {
@@ -1074,61 +1364,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .works__card-img {
-    width:        100%;
-    display:      block;
-    aspect-ratio: 470 / 262; /* Autorská tvorba */
-    object-fit:   cover;
-    transition:   transform 400ms ease-out;
+    width: 100%;
+    display: block;
+    aspect-ratio: 470 / 262;
+    /* Autorská tvorba */
+    object-fit: cover;
+    transition: transform 400ms ease-out;
 }
 
 #napsali-o-mne .works__card-img {
-    aspect-ratio: 470 / 443; /* Napsali o mně – vyšší fotky */
+    aspect-ratio: 470 / 443;
+    /* Napsali o mně – vyšší fotky */
 }
 
 .works__card-credit {
-    position:    absolute;
-    bottom:      0.9375rem;  /* 15px */
-    right:       0.9375rem;
+    position: absolute;
+    bottom: 0.9375rem;
+    /* 15px */
+    right: 0.9375rem;
     font-family: var(--font-body);
     font-weight: 400;
-    font-size:   0.625rem;   /* 10px */
-    line-height: 1.5625rem;  /* 25px */
-    color:       var(--color-secondary);
-    transition:  color 400ms ease-out;
+    font-size: 0.625rem;
+    /* 10px */
+    line-height: 1.5625rem;
+    /* 25px */
+    color: var(--color-secondary);
+    transition: color 400ms ease-out;
 }
 
 @media (max-width: 767px) {
     .works__card-credit {
-        bottom: 1.1875rem;   /* 19px */
-        right:  1.1875rem;
+        bottom: 1.1875rem;
+        /* 19px */
+        right: 1.1875rem;
     }
 }
 
 /* Tělo karty */
 .works__card-body {
-    padding:        clamp(1.25rem, 2vw, 1.5rem);
-    flex:           1;
-    display:        flex;
+    padding: clamp(1.25rem, 2vw, 1.5rem);
+    flex: 1;
+    display: flex;
     flex-direction: column;
 }
 
 .works__card-title {
-    font-family:   var(--font-body);
-    font-weight:   700;
-    font-size:     clamp(1.125rem, calc(1.024rem + 0.449vw), 1.5625rem); /* 18px@360 → 25px@1920 */
-    line-height:   clamp(1.5625rem, calc(1.490rem + 0.321vw), 1.875rem); /* 25px@360 → 30px@1920 */
-    color:         var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(1.125rem, calc(1.024rem + 0.449vw), 1.5625rem);
+    /* 18px@360 → 25px@1920 */
+    line-height: clamp(1.5625rem, calc(1.490rem + 0.321vw), 1.875rem);
+    /* 25px@360 → 30px@1920 */
+    color: var(--color-text);
     margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-    transition:    color 400ms ease-out;
+    transition: color 400ms ease-out;
 }
 
 .works__card-text {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size:   clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);         /* 14px@360 → 16px@1920 */
-    line-height: clamp(1.25rem,  calc(1.178rem + 0.321vw), 1.5625rem);    /* 20px@360 → 25px@1920 */
-    color:       var(--color-text);
-    transition:  color 400ms ease-out;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    /* 14px@360 → 16px@1920 */
+    line-height: clamp(1.25rem, calc(1.178rem + 0.321vw), 1.5625rem);
+    /* 20px@360 → 25px@1920 */
+    color: var(--color-text);
+    transition: color 400ms ease-out;
 }
 
 .works__cta {
@@ -1146,12 +1446,13 @@ h1, h2, h3, h4, h5, h6 {
 .works__card-source {
     font-family: var(--font-body);
     font-weight: 700;
-    font-size:   clamp(0.8125rem, calc(0.798rem + 0.064vw), 0.875rem); /* 13px@360 → 14px@1920 */
+    font-size: clamp(0.8125rem, calc(0.798rem + 0.064vw), 0.875rem);
+    /* 13px@360 → 14px@1920 */
     line-height: 1.4;
-    color:       var(--color-text);
-    margin-top:  auto;
+    color: var(--color-text);
+    margin-top: auto;
     padding-top: clamp(0.75rem, 1.5vw, 1rem);
-    transition:  color 400ms ease-out;
+    transition: color 400ms ease-out;
 }
 
 @media (hover: hover) {
@@ -1164,27 +1465,36 @@ h1, h2, h3, h4, h5, h6 {
    SEKCE 6 – ŽIVOTOPIS
    ============================================================ */
 .bio {
-    padding-block:        clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
-    padding-inline-start: clamp(1.25rem, calc(-3.841rem + 22.628vw), 23.3125rem); /* 20px@360 → 373px@1920 */
-    padding-inline-end:   clamp(1.25rem, calc(-4.130rem + 23.910vw), 24.5625rem); /* 20px@360 → 393px@1920 */
-    background-color:     #ffffff;
+    padding-block: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
+    padding-inline-start: clamp(1.25rem, calc(-3.841rem + 22.628vw), 23.3125rem);
+    /* 20px@360 → 373px@1920 */
+    padding-inline-end: clamp(1.25rem, calc(-4.130rem + 23.910vw), 24.5625rem);
+    /* 20px@360 → 393px@1920 */
+    background-color: #ffffff;
 }
 
 .bio__inner {
     display: grid;
-    gap:     clamp(1.5rem, calc(0.952rem + 2.436vw), 3.875rem); /* 24px@360 → 62px@1920 */
+    gap: clamp(1.5rem, calc(0.952rem + 2.436vw), 3.875rem);
+    /* 24px@360 → 62px@1920 */
 }
 
 @media (max-width: 767px) {
     .bio {
-        padding-inline: 2.5rem; /* 40px */
+        padding-inline: 2.5rem;
+        /* 40px */
     }
+
     .bio__inner {
-        gap: 3.5rem; /* 56px */
+        gap: 3.5rem;
+        /* 56px */
     }
+
     .bio__media {
-        order: 1; /* foto pod textem na mobilu */
+        order: 1;
+        /* foto pod textem na mobilu */
     }
+
     .bio__signature {
         display: none;
     }
@@ -1193,10 +1503,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
     .bio__inner {
         grid-template-columns: 1fr 1fr;
-        align-items:           start;
+        align-items: start;
     }
+
     .bio__content {
-        padding-block-start: clamp(0rem, calc(-2.542rem + 5.295vw), 3.8125rem); /* 0px@768 → 61px@1920 */
+        padding-block-start: clamp(0rem, calc(-2.542rem + 5.295vw), 3.8125rem);
+        /* 0px@768 → 61px@1920 */
     }
 }
 
@@ -1205,130 +1517,140 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bio__img {
-    width:      100%;
-    display:    block;
+    width: 100%;
+    display: block;
     box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
 }
 
 .bio__signature {
-    position:      absolute;
-    bottom:        -8%;
-    left:          55%;
-    width:         clamp(16rem, 56.25vw, 67.5rem); /* ~256px@360 → 1080px@1920 */
-    transform:     rotate(-14deg);
+    position: absolute;
+    bottom: -8%;
+    left: 55%;
+    width: clamp(16rem, 56.25vw, 67.5rem);
+    /* ~256px@360 → 1080px@1920 */
+    transform: rotate(-14deg);
     pointer-events: none;
-    user-select:   none;
-    z-index:       2;
+    user-select: none;
+    z-index: 2;
 }
 
 .bio__title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
+    font-family: var(--font-heading);
+    font-weight: 600;
     text-transform: uppercase;
-    font-size:      clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
-    line-height:    1.125;
-    color:          var(--color-text);
-    margin-bottom:  1.5rem;
+    font-size: clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
+    line-height: 1.125;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
 }
 
 .bio__text {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size:   clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
     line-height: clamp(1.25rem, calc(1.178rem + 0.321vw), 1.5625rem);
-    color:       var(--color-text);
+    color: var(--color-text);
 }
 
-.bio__text + .bio__text {
-    margin-top: 1.5rem; /* 24px */
+.bio__text+.bio__text {
+    margin-top: 1.5rem;
+    /* 24px */
 }
 
 /* ============================================================
    SEKCE 7 – KONTAKT
    ============================================================ */
 .contact {
-    padding-block-start:  0;
-    padding-block-end:    clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
-    padding-inline-start: clamp(2.5rem, calc(-4.163rem + 29.615vw), 31.375rem);  /* 40px@360 → 502px@1920 */
-    padding-inline-end:   clamp(2.5rem, calc(-4.238rem + 29.936vw), 31.6875rem); /* 40px@360 → 507px@1920 */
-    background-color:     #ffffff;
+    padding-block-start: 0;
+    padding-block-end: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
+    padding-inline-start: clamp(2.5rem, calc(-4.163rem + 29.615vw), 31.375rem);
+    /* 40px@360 → 502px@1920 */
+    padding-inline-end: clamp(2.5rem, calc(-4.238rem + 29.936vw), 31.6875rem);
+    /* 40px@360 → 507px@1920 */
+    background-color: #ffffff;
 }
 
 .contact__title {
-    font-family:    var(--font-heading);
-    font-weight:    600;
+    font-family: var(--font-heading);
+    font-weight: 600;
     text-transform: uppercase;
-    font-size:      clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
-    line-height:    1.125;
-    color:          var(--color-text);
-    margin-bottom:  1.5rem;
+    font-size: clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
+    line-height: 1.125;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
 }
 
 .contact__intro {
-    font-family:   var(--font-body);
-    font-weight:   400;
-    font-size:     clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
-    line-height:   clamp(1.25rem, calc(1.178rem + 0.321vw), 1.5625rem);
-    color:         var(--color-text);
-    max-width:     58ch;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    line-height: clamp(1.25rem, calc(1.178rem + 0.321vw), 1.5625rem);
+    color: var(--color-text);
+    max-width: 58ch;
     margin-bottom: clamp(2rem, 3vw, 3rem);
 }
 
 .contact__form {
     background-color: var(--color-primary);
-    border-radius:    1.25rem;
-    padding-block:  clamp(2rem, calc(1.596rem + 1.795vw), 3.75rem);  /* 32px@360 → 60px@1920 */
-    padding-inline: clamp(1.25rem, calc(0.673rem + 2.564vw), 3.75rem); /* 20px@360 → 60px@1920 */
-    display:          flex;
-    flex-direction:   column;
-    gap:              clamp(1rem, 2vw, 1.5rem);
+    border-radius: 1.25rem;
+    padding-block: clamp(2rem, calc(1.596rem + 1.795vw), 3.75rem);
+    /* 32px@360 → 60px@1920 */
+    padding-inline: clamp(1.25rem, calc(0.673rem + 2.564vw), 3.75rem);
+    /* 20px@360 → 60px@1920 */
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .contact__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:     clamp(1rem, 2vw, 1.5rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 @media (max-width: 767px) {
     .contact__form {
-        margin-inline: -1.25rem; /* formulář 20px od okraje (sekce 40px − 20px) */
+        margin-inline: -1.25rem;
+        /* formulář 20px od okraje (sekce 40px − 20px) */
     }
+
     .contact__row {
         grid-template-columns: 1fr;
     }
 }
 
 .contact__field {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    gap:            0.5rem;
+    gap: 0.5rem;
 }
 
 .contact__label {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size:   1rem;       /* 16px */
-    line-height: 1.5625rem;  /* 25px */
-    color:       #ffffff;
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5625rem;
+    /* 25px */
+    color: #ffffff;
 }
 
 .contact__input,
 .contact__textarea {
-    font-family:        var(--font-body);
-    font-weight:        400;
-    font-size:          clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
-    color:              var(--color-secondary);
-    background-color:   #ffffff;
-    border:             1px solid rgba(253, 207, 207, 0.35);
-    border-radius:      0.5rem;
-    padding:            0.75rem 1rem;
-    width:              100%;
-    outline:            none;
-    box-shadow:         0 4px 22px 0 rgba(0, 0, 0, 0.25);
-    transition:         border-color 300ms ease;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    color: var(--color-secondary);
+    background-color: #ffffff;
+    border: 1px solid rgba(253, 207, 207, 0.35);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    outline: none;
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.25);
+    transition: border-color 300ms ease;
     -webkit-appearance: none;
-    appearance:         none;
+    appearance: none;
 }
 
 .contact__input::placeholder,
@@ -1342,25 +1664,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact__textarea {
-    resize:     vertical;
+    resize: vertical;
     min-height: 9rem;
 }
 
 .contact__cta {
     text-align: center;
-    margin-top: clamp(0rem, calc(1.231rem - 1.026vw), 1rem); /* 16px@360 → 0px@1920 (+ gap = 32px/24px) */
+    margin-top: clamp(0rem, calc(1.231rem - 1.026vw), 1rem);
+    /* 16px@360 → 0px@1920 (+ gap = 32px/24px) */
 }
 
 .contact__submit {
     background-color: transparent;
-    color:            var(--color-secondary);
-    border-color:     var(--color-secondary);
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
 @media (hover: hover) {
     .contact__submit:hover {
         background-color: var(--color-secondary);
-        color:            var(--color-primary);
+        color: var(--color-primary);
     }
 }
 
@@ -1372,29 +1695,36 @@ h1, h2, h3, h4, h5, h6 {
    PATIČKA
    ============================================================ */
 .site-footer {
-    background-color:     var(--color-primary);
-    color:                var(--color-secondary);
-    margin-inline:        clamp(1.25rem, calc(-1.808rem + 13.59vw), 14.5rem);   /* 20px@360 → 232px@1920 */
-    border-radius:        1.25rem 1.25rem 0 0;
-    padding-block-start:  clamp(2rem, calc(1.495rem + 2.244vw), 4.1875rem);      /* 32px@360 → 67px@1920 */
-    padding-inline-start: clamp(1.25rem, calc(-0.264rem + 6.731vw), 7.8125rem); /* 20px@360 → 125px@1920 */
-    padding-inline-end:   1.25rem;                                                /* 20px mob; 0 desktop */
-    padding-block-end:    clamp(1.1875rem, calc(2.1875rem - 0.833vw), 2rem);     /* 32px@360 → 19px@1920 */
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    margin-inline: clamp(1.25rem, calc(-1.808rem + 13.59vw), 14.5rem);
+    /* 20px@360 → 232px@1920 */
+    border-radius: 1.25rem 1.25rem 0 0;
+    padding-block-start: clamp(2rem, calc(1.495rem + 2.244vw), 4.1875rem);
+    /* 32px@360 → 67px@1920 */
+    padding-inline-start: clamp(1.25rem, calc(-0.264rem + 6.731vw), 7.8125rem);
+    /* 20px@360 → 125px@1920 */
+    padding-inline-end: 1.25rem;
+    /* 20px mob; 0 desktop */
+    padding-block-end: clamp(1.1875rem, calc(2.1875rem - 0.833vw), 2rem);
+    /* 32px@360 → 19px@1920 */
 }
 
 .footer__inner {
-    display:        flex;
-    align-items:    stretch;
+    display: flex;
+    align-items: stretch;
     flex-direction: column;
-    gap:            3.75rem;
+    gap: 3.75rem;
 }
 
 .footer__signature {
-    display:       block;
-    width:         clamp(11.25rem, calc(10.154rem + 4.872vw), 16rem); /* 180px@360 → 256px@1920 */
-    height:        auto;
-    flex-shrink:   0;
-    margin-inline: auto; /* centrování na mobilu */
+    display: block;
+    width: clamp(11.25rem, calc(10.154rem + 4.872vw), 16rem);
+    /* 180px@360 → 256px@1920 */
+    height: auto;
+    flex-shrink: 0;
+    margin-inline: auto;
+    /* centrování na mobilu */
 }
 
 .footer__right {
@@ -1402,68 +1732,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__nav-group {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    gap:            6.25rem;
+    gap: 6.25rem;
 }
 
 .footer__nav-cols {
-    display:        flex;
+    display: flex;
     flex-direction: column;
-    align-items:    flex-start;
-    gap:            1rem;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .footer__nav-col {
-    list-style:     none;
-    padding:        0;
-    margin:         0;
-    display:        flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
     flex-direction: column;
-    gap:            1rem;
+    gap: 1rem;
 }
 
 .footer__address {
-    display:          flex;
-    flex-direction:   column;
-    gap:              1rem;
-    font-style:       normal;
-    order:            -1;
-    margin-block-end: 4rem; /* extra mezera před nav linky: 64px + 16px gap = 80px */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-style: normal;
+    order: -1;
+    margin-block-end: 4rem;
+    /* extra mezera před nav linky: 64px + 16px gap = 80px */
 }
 
 .footer__nav-link {
-    font-family:     var(--font-heading);
-    font-weight:     400;
-    font-size:       1rem;
-    line-height:     1;
-    text-transform:  uppercase;
-    white-space:     nowrap;
-    color:           var(--color-secondary);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--color-secondary);
     text-decoration: none;
-    transition:      color 300ms ease;
+    transition: color 300ms ease;
 }
 
 .footer__bottom {
-    display:            flex;
-    align-items:        center;
-    justify-content:    space-between;
-    flex-wrap:          wrap;
-    gap:                0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .footer__credits {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size:   0.75rem; /* 12px */
+    font-size: 0.75rem;
+    /* 12px */
     line-height: 1.5;
-    color:       var(--color-secondary);
+    color: var(--color-secondary);
 }
 
 .footer__credits-link {
-    color:           var(--color-secondary);
+    color: var(--color-secondary);
     text-decoration: none;
-    transition:      color 300ms ease;
+    transition: color 300ms ease;
 }
 
 @media (min-width: 768px) {
@@ -1472,67 +1804,82 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .footer__inner {
-        position: relative; /* anchor pro absolutní podpis */
-        gap:      0;
+        position: relative;
+        /* anchor pro absolutní podpis */
+        gap: 0;
     }
 
     .footer__signature {
         position: absolute;
-        top:      0;
-        left:     0;
-        margin:   0; /* reset mobilního auto-centrování */
+        top: 0;
+        left: 0;
+        margin: 0;
+        /* reset mobilního auto-centrování */
     }
 
     .footer__right {
-        display:            flex;
-        justify-content:    center;
-        align-items:        flex-start;
-        width:              100%;
-        margin-block-start: clamp(2.0625rem, calc(-1.771rem + 7.986vw), 7.8125rem); /* 33px@768 → 125px@1920 */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        margin-block-start: clamp(2.0625rem, calc(-1.771rem + 7.986vw), 7.8125rem);
+        /* 33px@768 → 125px@1920 */
     }
 
     .footer__nav-group {
-        gap: clamp(2.5rem, calc(0.167rem + 4.861vw), 6rem); /* 40px@768 → 96px@1920 */
+        gap: clamp(2.5rem, calc(0.167rem + 4.861vw), 6rem);
+        /* 40px@768 → 96px@1920 */
     }
 
     .footer__nav-cols {
         flex-direction: row;
-        flex-wrap:      nowrap;
-        gap:            0;
+        flex-wrap: nowrap;
+        gap: 0;
     }
 
     .footer__address {
-        order:            0;
+        order: 0;
         margin-block-end: 0;
     }
 
     .footer__nav-col:first-child {
-        margin-right: clamp(1.875rem, calc(0.625rem + 2.604vw), 3.75rem); /* 60px@1920 */
+        margin-right: clamp(1.875rem, calc(0.625rem + 2.604vw), 3.75rem);
+        /* 60px@1920 */
     }
 
     .footer__nav-col:nth-child(2) {
-        margin-right: clamp(3.75rem, calc(-2.042rem + 12.066vw), 12.4375rem); /* 199px@1920 */
+        margin-right: clamp(3.75rem, calc(-2.042rem + 12.066vw), 12.4375rem);
+        /* 199px@1920 */
     }
 
     .footer__bottom {
-        flex-wrap:          nowrap;
-        padding-inline-end: 1.25rem; /* fine-tune Coding by alignment with address column */
+        flex-wrap: nowrap;
+        padding-inline-end: 1.25rem;
+        /* fine-tune Coding by alignment with address column */
     }
 }
 
 @media (hover: hover) {
-    .footer__nav-link:hover     { color: #ffffff; }
-    .footer__credits-link:hover { color: #ffffff; }
+    .footer__nav-link:hover {
+        color: #ffffff;
+    }
+
+    .footer__credits-link:hover {
+        color: #ffffff;
+    }
 }
 
 /* ============================================================
    REDUKCE POHYBU (přístupnost)
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration:        0.01ms !important;
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration:       0.01ms !important;
-        scroll-behavior:           auto !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
