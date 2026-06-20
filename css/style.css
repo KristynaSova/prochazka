@@ -882,9 +882,36 @@ h6 {
    KONTAKT – designer-zazitku
    ============================================================ */
 .dz-contact {
+    position: relative;
+    overflow: hidden;
     padding-top:    0;
     padding-bottom: clamp(3.5rem, calc(2.144rem + 6.026vw), 9.375rem); /* 56px@360 → 150px@1920 */
     background-color: #ffffff;
+}
+
+.dz-contact__signature {
+    display: none; /* mobil: skryto */
+}
+
+@media (min-width: 768px) {
+    .dz-contact__signature {
+        display: block;
+        position: absolute;
+        top:   clamp(0.5rem, calc(1rem + 2vw), 4.5rem);
+        right: clamp(0rem, calc(-9.125rem + 14.583vw), 10.125rem);
+        width: clamp(15.625rem, calc(3.375rem + 25.521vw), 34rem);
+        opacity: 0.55;
+        pointer-events: none;
+        user-select: none;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .dz-contact .contact__title,
+    .dz-contact .contact__intro {
+        display: none;
+    }
 }
 
 .dz-contact .contact__form {
@@ -893,7 +920,9 @@ h6 {
 }
 
 @media (min-width: 768px) {
-    .dz-contact .contact__form {
+    .dz-contact .contact__form,
+    .dz-contact .contact__title,
+    .dz-contact .contact__intro {
         margin-left:  clamp(1.25rem, calc(-5.745rem + 31.09vw), 31.5625rem); /* 20px@360 → 505px@1920 */
         margin-right: clamp(1.25rem, calc(-5.745rem + 31.09vw), 31.5625rem);
     }
