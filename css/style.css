@@ -851,9 +851,10 @@ h6 {
 @media (max-width: 767px) {
     .kontakt-section__signature {
         position:     relative;
+        top:          auto;
         display:      block;
         width:        18.7175rem;  /* 299px */
-        margin-top:   -2.375rem;
+        margin-top:   -4.5rem;     /* táhne podpis výše do prostoru pod intro textem */
         margin-left:  auto;
         margin-right: -4rem;
         transform:    rotate(-19.04deg);
