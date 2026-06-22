@@ -555,6 +555,7 @@ h6 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-top: clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem); /* výška headeru */
 }
 
 /* Médium – fotografie na pozadí */
