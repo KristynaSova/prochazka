@@ -611,6 +611,11 @@ h6 {
     background: rgba(0, 0, 0, 0.40);
 }
 
+/* Overlay seznam-tvorby – 30 % černá */
+.hero__overlay--st {
+    background: rgba(0, 0, 0, 0.30);
+}
+
 /* Podpis autora – nad fotografií, relativní pozice vůči .hero__media */
 .hero__signature {
     display: none;
@@ -831,8 +836,8 @@ h6 {
     margin-top:   clamp(4.5rem, calc(3.654rem + 2.308vw), 7rem);              /* výška headeru */
     padding-top:    clamp(6.25rem, calc(5.529rem + 3.205vw), 9.375rem);       /* 100px@360 → 150px@1920 */
     padding-bottom: clamp(3.5rem, calc(2.144rem + 6.026vw), 9.375rem);        /* 56px@360 → 150px@1920 */
-    padding-left:   clamp(2.5rem, calc(-4.207rem + 29.808vw), 31.5625rem);    /* 40px@360 → 505px@1920 */
-    padding-right:  clamp(2.5rem, calc(-4.207rem + 29.808vw), 31.5625rem);
+    padding-left:   clamp(2.5rem, calc(-5.625rem + 34vw), 31.5625rem);       /* 40px@360 → 505px@1750 */
+    padding-right:  clamp(2.5rem, calc(-5.625rem + 34vw), 31.5625rem);
     background-color: #ffffff;
     overflow: hidden;
 }
@@ -1493,9 +1498,6 @@ h6 {
         display: none;
     }
 
-    #autorska-tvorba.is-expanded .works__card:nth-child(n+3) {
-        display: block;
-    }
 
     .works__card-body {
         padding-inline: 1.25rem;
@@ -1528,6 +1530,28 @@ h6 {
     display: flex;
     flex-direction: column;
 }
+
+/* Odkaz obalující celou kartu (karta 1 – Wikipedie) */
+.works__card-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Focus pro klávesnici – obrys na úrovni article, ne linku */
+.works__card:has(.works__card-link:focus-visible) {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+    background-color: var(--color-primary);
+    transform: scale(0.97);
+}
+
+.works__card:has(.works__card-link:focus-visible) .works__card-img { transform: scale(1.05); }
+.works__card:has(.works__card-link:focus-visible) .works__card-title,
+.works__card:has(.works__card-link:focus-visible) .works__card-text,
+.works__card:has(.works__card-link:focus-visible) .works__card-credit { color: var(--color-secondary); }
 
 @media (hover: hover) {
     .works__card:hover {
@@ -1623,11 +1647,6 @@ h6 {
     text-align: center;
 }
 
-@media (min-width: 768px) {
-    .works__cta {
-        display: none;
-    }
-}
 
 #napsali-o-mne {
     padding-block: 0;
@@ -1757,10 +1776,8 @@ h6 {
 .contact {
     padding-block-start: 0;
     padding-block-end: clamp(3.5rem, calc(2.173rem + 5.897vw), 9.25rem);
-    padding-inline-start: clamp(2.5rem, calc(-4.163rem + 29.615vw), 31.375rem);
-    /* 40px@360 → 502px@1920 */
-    padding-inline-end: clamp(2.5rem, calc(-4.238rem + 29.936vw), 31.6875rem);
-    /* 40px@360 → 507px@1920 */
+    padding-inline-start: clamp(2.5rem, calc(-5.625rem + 34vw), 31.5625rem);   /* 40px@360 → 505px@1750 */
+    padding-inline-end:   clamp(2.5rem, calc(-5.625rem + 34vw), 31.5625rem);
     background-color: #ffffff;
 }
 
@@ -2081,4 +2098,139 @@ h6 {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* ============================================================
+   SEZNAM TVORBY – hero
+   ============================================================ */
+.hero--seznam-tvorby .hero__content {
+    /* 551px@360 → 878px@1920 */
+    padding-top: clamp(34.4375rem, calc(29.725rem + 20.96vw), 54.875rem);
+    /* 40px@360 → 233px@1920, shodné s accordion */
+    padding-inline: clamp(2.5rem, calc(-0.284rem + 12.372vw), 14.5625rem);
+    /* gap = pb − |margin| = 24px; 119px@360 → 224px@1920 */
+    padding-bottom: clamp(7.4375rem, calc(5.923rem + 6.731vw), 14rem);
+}
+
+/* ============================================================
+   SEZNAM TVORBY – akordeony
+   ============================================================ */
+.st-accordions-wrap {
+    /* Průhledné pozadí: tmavá hero fotka prosvítá pod kartami v overlap zóně.
+       Bílý bg mají individuální .st-accordion karty; pod hero je bílý body bg. */
+    position: relative;
+    z-index: 2;
+    /* 95px@360 → 200px@1920: 1. karta + mezera + ½ 2. karty v tmavé hero ploše */
+    margin-top: clamp(-12.5rem, calc(-4.423rem - 6.731vw), -5.9375rem);
+    padding-bottom: var(--section-pad);
+    /* 40px@360 → 233px@1920 */
+    padding-inline: clamp(2.5rem, calc(-0.284rem + 12.372vw), 14.5625rem);
+}
+
+.st-accordions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.st-accordion {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    background: #fff;
+    transition: background var(--transition);
+}
+
+.st-accordion.is-open {
+    background: var(--color-primary);
+}
+
+.st-accordion__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    /* block: 16px@360 → 30px@1920 | inline: 20px@360 → 50px@1920 */
+    padding:
+        clamp(1rem, calc(0.8rem + 0.897vw), 1.875rem)
+        clamp(1.25rem, calc(0.817rem + 1.923vw), 3.125rem);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 700;
+    /* 14px@360 → 25px@1920 */
+    font-size: clamp(0.875rem, calc(0.716rem + 0.705vw), 1.5625rem);
+    /* 18px@360 → 60px@1920 */
+    line-height: clamp(1.125rem, calc(0.519rem + 2.692vw), 3.75rem);
+    transition: color var(--transition);
+}
+
+.st-accordion.is-open .st-accordion__header {
+    color: #fff;
+}
+
+.st-accordion__chevron {
+    flex-shrink: 0;
+    /* 20px@360 → 34px@1920 */
+    width: clamp(1.25rem, calc(1.057rem + 0.865vw), 2.125rem);
+    height: auto;
+    transition: transform var(--transition);
+}
+
+.st-accordion.is-open .st-accordion__chevron {
+    transform: rotate(180deg);
+}
+
+.st-accordion__body {
+    /* Grid trick: animuje výšku bez znalosti finální výšky */
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 350ms ease;
+}
+
+/* Přepíšeme UA hidden → display:none, aby animace mohla proběhnout */
+.st-accordion__body[hidden] {
+    display: grid;
+}
+
+.st-accordion.is-open .st-accordion__body {
+    grid-template-rows: 1fr;
+}
+
+.st-work-list {
+    /* Přímý potomek gridu musí mít overflow:hidden + min-height:0 */
+    overflow: hidden;
+    min-height: 0;
+    list-style: none;
+    /* Padding přesunut sem z body, aby se animoval uvnitř */
+    padding:
+        0
+        clamp(1.25rem, calc(0.817rem + 1.923vw), 3.125rem)
+        clamp(1rem, calc(0.8rem + 0.897vw), 1.875rem);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.st-work-item__title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.875rem, calc(0.716rem + 0.705vw), 1.5625rem);
+    line-height: 1.35;
+    color: #fff;
+    margin: 0 0 0.25rem;
+}
+
+.st-work-item__desc {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.8125rem, calc(0.668rem + 0.641vw), 1.375rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
 }

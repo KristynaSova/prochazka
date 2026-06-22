@@ -177,18 +177,41 @@
     }
 
     /* --------------------------------------------------------
-       ZOBRAZIT VÍCE – Autorská tvorba (mobile)
+       AKORDEONY – seznam-tvorby
        -------------------------------------------------------- */
-    const worksMoreBtn  = document.querySelector('.works__cta .btn');
-    const worksSection  = document.getElementById('autorska-tvorba');
+    const accordionBtns = document.querySelectorAll('[data-accordion-toggle]');
+    let activeBtn = null;
 
-    if (worksMoreBtn && worksSection) {
-        worksMoreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            worksSection.classList.add('is-expanded');
-            worksMoreBtn.closest('.works__cta').hidden = true;
+    const closeAccordion = (btn) => {
+        const body = document.getElementById(btn.getAttribute('aria-controls'));
+        btn.closest('.st-accordion').classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        body.hidden = true;
+    };
+
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+            /* Zavřít aktuálně otevřený (pokud je jiný) */
+            if (activeBtn && activeBtn !== btn) {
+                closeAccordion(activeBtn);
+                activeBtn = null;
+            }
+
+            if (isOpen) {
+                closeAccordion(btn);
+                activeBtn = null;
+            } else {
+                const accordion = btn.closest('.st-accordion');
+                const body = document.getElementById(btn.getAttribute('aria-controls'));
+                accordion.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+                body.hidden = false;
+                activeBtn = btn;
+            }
         });
-    }
+    });
 
     /* --------------------------------------------------------
        PLYNULÝ SCROLL pro kotevní odkazy
