@@ -416,7 +416,7 @@ h6 {
     background-color: var(--color-primary);
     display: flex;
     flex-direction: column;
-    padding: 40px 40px 100px;
+    padding: 1.625rem 2.5rem 6.25rem; /* top 26px = střed křížku srovnán s hamburgerm */
     visibility: hidden;
     opacity: 0;
     transition:
@@ -1441,8 +1441,8 @@ h6 {
     flex: 1;
     display: flex;
     align-items: flex-end;
-    padding-bottom: clamp(1.875rem, 8.333vw, 10rem);
-    /* 30px@360px → 160px@1920px */
+    padding-bottom: clamp(3.5rem, 8.333vw, 10rem);
+    /* 56px@360px → 160px@1920px */
     padding-inline-start: clamp(1.875rem, calc(-1rem + 12.756vw), 14.3125rem);
     /* 30px@360px → 229px@1920px */
     padding-inline-end: clamp(1.875rem, 5vw, 9rem);
