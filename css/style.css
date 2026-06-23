@@ -2101,8 +2101,8 @@ h6 {
     padding-top: clamp(34.4375rem, calc(29.725rem + 20.96vw), 54.875rem);
     /* 40px@360 → 233px@1920, shodné s accordion */
     padding-inline: clamp(2.5rem, calc(-0.284rem + 12.372vw), 14.5625rem);
-    /* gap = pb − |margin| = 24px; 119px@360 → 224px@1920 */
-    padding-bottom: clamp(7.4375rem, calc(5.923rem + 6.731vw), 14rem);
+    /* gap = pb − |margin| = 30px; 64px@360 → 98px@1920 */
+    padding-bottom: clamp(4rem, calc(3.51rem + 2.179vw), 6.125rem);
 }
 
 /* ============================================================
@@ -2113,8 +2113,8 @@ h6 {
        Bílý bg mají individuální .st-accordion karty; pod hero je bílý body bg. */
     position: relative;
     z-index: 2;
-    /* 95px@360 → 200px@1920: 1. karta + mezera + ½ 2. karty v tmavé hero ploše */
-    margin-top: clamp(-12.5rem, calc(-4.423rem - 6.731vw), -5.9375rem);
+    /* 34px@360 → 68px@1920: ½ výšky 1. karty v tmavé hero ploše */
+    margin-top: clamp(-4.25rem, calc(-1.577rem - 2.179vw), -2.125rem);
     padding-bottom: var(--section-pad);
     /* 40px@360 → 233px@1920 */
     padding-inline: clamp(2.5rem, calc(-0.284rem + 12.372vw), 14.5625rem);
@@ -2127,7 +2127,7 @@ h6 {
 }
 
 .st-accordion {
-    border-radius: var(--radius);
+    border-radius: 0;
     box-shadow: var(--shadow-card);
     overflow: hidden;
     background: #fff;
