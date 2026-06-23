@@ -222,16 +222,15 @@ h6 {
     align-items: center;
     max-width: none;
     margin-inline: 0;
-    padding-block: clamp(1rem, calc(0.654rem + 1.538vw), 2.5rem);
-    /* 16px → 40px */
+    padding-block: clamp(0.8125rem, calc(-0.1875rem + 2.083vw), 2.3125rem);
+    /* 13px → 37px */
     padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem);
     /* 40px@768px → 376px@1920px, gentle slope */
 }
 
-/* ── Instagram – vlevo, jen desktop ── */
+/* ── Instagram – vpravo (v nav__right), jen desktop ── */
 .nav__instagram {
     display: none;
-    flex: 1;
     font-family: var(--font-heading);
     font-weight: 400;
     font-size: 1rem;
@@ -299,9 +298,12 @@ h6 {
     justify-content: flex-end;
 }
 
-/* ── Jazykový přepínač – jen desktop ── */
+/* ── Jazykový přepínač – pravý horní roh mimo container ── */
 .nav__lang-link {
     display: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
     font-family: var(--font-heading);
     font-weight: 400;
     font-size: 1rem;
@@ -384,7 +386,7 @@ h6 {
 /* ── Desktop ≥ 1024px ── */
 @media (min-width: 1024px) {
     .nav__logo {
-        display: none;
+        display: flex;
     }
 
     .nav__instagram {
