@@ -45,6 +45,36 @@
             color:       var(--color-text-body, #333333);
             max-width:   480px;
         }
+
+        .error-page__body {
+            text-align: left;
+        }
+
+        .error-page__body .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5rem;
+            padding: 0.875rem 1.0625rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 0.85;
+            text-transform: uppercase;
+            color: #FDCFCF;
+            background-color: #4B0404;
+            border: 2px solid #4B0404;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .error-page__body .btn:hover {
+            background-color: #FDCFCF;
+            color: #4B0404;
+            border-color: #FDCFCF;
+        }
     </style>
 </head>
 <body>
@@ -55,13 +85,15 @@
             <wa-icon name="face-frown" variant="regular"></wa-icon>
         </div>
 
-        <h1 class="error-page__title">Stránka nebyla nalezena</h1>
+        <div class="error-page__body">
+            <h1 class="error-page__title">Stránka nebyla nalezena</h1>
 
-        <p class="error-page__text">
-            Omlouváme se, stránka, kterou hledáte, neexistuje nebo byla přesunuta.
-        </p>
+            <p class="error-page__text">
+                Omlouváme se, stránka, kterou hledáte, neexistuje nebo byla přesunuta.
+            </p>
 
-        <a href="/" class="btn">Zpět na úvodní stránku</a>
+            <a href="/" class="btn">Zpět na úvodní stránku</a>
+        </div>
 
     </main>
 

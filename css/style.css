@@ -1859,7 +1859,7 @@ h2 {
 .contact__textarea {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
+    font-size: 1rem; /* min 16px – zabraňuje iOS auto-zoom při focusu */
     color: var(--color-text);
     background-color: #ffffff;
     border: 1px solid rgba(253, 207, 207, 0.35);
@@ -1871,6 +1871,13 @@ h2 {
     transition: border-color 300ms ease;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.contact__input:-webkit-autofill,
+.contact__textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset, 0 4px 22px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 1000px #ffffff inset, 0 4px 22px 0 rgba(0, 0, 0, 0.25);
+    -webkit-text-fill-color: var(--color-text);
 }
 
 .contact__input::placeholder,
