@@ -649,9 +649,16 @@ h2 {
     user-select: none;
 }
 
+@keyframes signature-reveal {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+}
+
 @media (min-width: 1024px) {
     .hero__signature {
         display: block;
+        clip-path: inset(0 100% 0 0);
+        animation: signature-reveal 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
     }
 }
 
@@ -1279,6 +1286,7 @@ h2 {
     opacity: 1;
     transform: translateX(0) translateY(0);
 }
+
 
 @media (prefers-reduced-motion: reduce) {
     [data-animate] {
