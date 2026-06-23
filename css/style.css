@@ -132,6 +132,10 @@ h6 {
     text-align: left;
 }
 
+h2 {
+    line-height: 1.125;
+}
+
 /* ============================================================
    PŘÍSTUPNOST – přeskočit na obsah
    ============================================================ */
@@ -222,8 +226,8 @@ h6 {
     align-items: center;
     max-width: none;
     margin-inline: 0;
-    padding-block: clamp(0.8125rem, calc(-0.1875rem + 2.083vw), 2.3125rem);
-    /* 13px → 37px */
+    padding-block: clamp(0.8125rem, calc(0.625rem + 0.833vw), 1.625rem);
+    /* 13px@360 → 26px@1920 */
     padding-inline: clamp(2.5rem, calc(-11.5rem + 29.167vw), 23.5rem);
     /* 40px@768px → 376px@1920px, gentle slope */
 }
@@ -302,11 +306,18 @@ h6 {
 .nav__lang-link {
     display: none;
     position: absolute;
-    top: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--color-secondary);
     font-family: var(--font-heading);
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1;
     text-transform: uppercase;
     color: var(--color-primary);
@@ -333,6 +344,7 @@ h6 {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin-right: -10px;
     flex-shrink: 0;
 }
 
@@ -362,6 +374,10 @@ h6 {
 .site-header--primary .nav__menu-item a,
 .site-header--primary .nav__lang-link {
     color: #E8D9D9;
+}
+
+.site-header--primary .nav__lang-link {
+    border-color: #E8D9D9;
 }
 
 .site-header--primary .nav__instagram:hover,
@@ -398,7 +414,7 @@ h6 {
     }
 
     .nav__lang-link {
-        display: block;
+        display: inline-flex;
     }
 
     .nav__toggle {
@@ -416,7 +432,7 @@ h6 {
     background-color: var(--color-primary);
     display: flex;
     flex-direction: column;
-    padding: 1.625rem 2.5rem 6.25rem; /* top 26px = střed křížku srovnán s hamburgerm */
+    padding: 1.75rem 2.5rem 6.25rem; /* top 28px = křížek srovnán s hamburgerm */
     visibility: hidden;
     opacity: 0;
     transition:
@@ -1066,7 +1082,7 @@ h6 {
     font-weight: 600;
     font-size: clamp(1.875rem, calc(1.154rem + 3.205vw), 5rem);
     /* 30px → 80px */
-    line-height: 1.05;
+    line-height: 1.125;
     text-transform: uppercase;
     color: var(--color-text);
     margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
@@ -1218,7 +1234,7 @@ h6 {
     font-weight: 600;
     font-size: clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem);
     /* 28px → 52px */
-    line-height: 1.05;
+    line-height: 1.125;
     text-transform: uppercase;
     color: #ffffff;
     /* 16px (360px) → 24px (1920px) */
@@ -1229,8 +1245,9 @@ h6 {
     font-family: var(--font-body);
     font-weight: 400;
     font-size: clamp(0.875rem, calc(0.846rem + 0.128vw), 1rem);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5625;
+    /* 25px@16px */
+    color: #ffffff;
     margin-bottom: clamp(1rem, calc(0.86rem + 0.513vw), 1.5rem);
     /* 16px → 24px */
 }
@@ -1300,7 +1317,7 @@ h6 {
     font-weight: 600;
     font-size: clamp(1.75rem, calc(1.404rem + 1.538vw), 3.25rem);
     /* 28px → 52px */
-    line-height: 1.05;
+    line-height: 1.125;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: var(--color-text);
@@ -1864,8 +1881,8 @@ h6 {
 .contact__input:focus,
 .contact__textarea:focus {
     border-color: var(--color-secondary);
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 2px;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-secondary), 0 4px 22px 0 rgba(0, 0, 0, 0.25);
 }
 
 .contact__textarea {
@@ -2136,6 +2153,8 @@ h6 {
 
 .st-accordion.is-open {
     background: var(--color-primary);
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .st-accordion__header {
@@ -2185,6 +2204,7 @@ h6 {
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
+    border-radius: 0;
     transition: grid-template-rows 350ms ease;
 }
 
@@ -2198,8 +2218,7 @@ h6 {
 }
 
 .st-work-list {
-    /* Přímý potomek gridu musí mít overflow:hidden + min-height:0 */
-    overflow: hidden;
+    /* min-height:0 umožňuje grid 0fr collapse; overflow:hidden je na rodiči .st-accordion__body */
     min-height: 0;
     list-style: none;
     /* padding-bottom = 0: spodní mezera je jako ::after, aby neblokovala collapse */
@@ -2242,10 +2261,13 @@ h6 {
     margin: 0;
 }
 
+.br-desktop { display: none; }
+
 /* ── SEZNAM TVORBY – desktop overlay ── */
 @media (min-width: 1024px) {
     /* Skryjeme mobilní zalomení v prvním akordeonu */
     .br-mobile { display: none; }
+    .br-desktop { display: inline; }
 
     /* line-height: 60px na 1920px je pro 1 řádek příliš – zkrátíme */
     .st-accordion__header { line-height: 1.2; }
