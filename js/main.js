@@ -156,11 +156,12 @@
             const progress = (vpH - rect.top) / (vpH + sH);
             if (progress < 0 || progress > 1) return;
 
-            // ±12 % výšky sekce ≈ 12 px pohybu na 100 px scrollu (pro 100svh sekci)
-            const maxShift = sH * 0.12;
+            // Ken Burns: větší parallax pohyb + zoom (1.08 při vstupu → 1.0 při odchodu)
+            const maxShift = sH * 0.22;
             const shift    = (progress - 0.5) * 2 * maxShift;
+            const scale    = 1.08 - progress * 0.08;
 
-            quoteParallax.style.transform = `translateY(${shift.toFixed(2)}px) translateZ(0)`;
+            quoteParallax.style.transform = `translateY(${shift.toFixed(2)}px) scale(${scale.toFixed(4)}) translateZ(0)`;
         };
 
         window.addEventListener('scroll', () => {
