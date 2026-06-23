@@ -2184,6 +2184,7 @@ h6 {
     /* Grid trick: animuje výšku bez znalosti finální výšky */
     display: grid;
     grid-template-rows: 0fr;
+    overflow: hidden;
     transition: grid-template-rows 350ms ease;
 }
 
@@ -2201,17 +2202,26 @@ h6 {
     overflow: hidden;
     min-height: 0;
     list-style: none;
-    /* Padding přesunut sem z body, aby se animoval uvnitř */
-    /* right: 19px@360 → 50px@1920 | bottom: 19px@360 → 30px@1920 | left: 24px@360 → 50px@1920 */
+    /* padding-bottom = 0: spodní mezera je jako ::after, aby neblokovala collapse */
+    /* right: 19px@360 → 50px@1920 | left: 24px@360 → 50px@1920 */
     padding:
         0
         clamp(1.1875rem, calc(0.740rem + 1.987vw), 3.125rem)
-        clamp(1.1875rem, calc(1.029rem + 0.705vw), 1.875rem)
+        0
         clamp(1.5rem, calc(1.125rem + 1.667vw), 3.125rem);
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+}
+
+/* Spodní mezera jako flex item – schová se při zavřeném akordeonu */
+.st-work-list::after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    /* 19px@360 → 30px@1920 – odpovídá původnímu padding-bottom */
+    height: clamp(1.1875rem, calc(1.029rem + 0.705vw), 1.875rem);
 }
 
 .st-work-item__title {
@@ -2240,15 +2250,15 @@ h6 {
     /* line-height: 60px na 1920px je pro 1 řádek příliš – zkrátíme */
     .st-accordion__header { line-height: 1.2; }
 
-    /* Větší přesah: 1. akordeon celý + 2. akordeon napůl v hero ploše
-       -146px@1024 → -200px@1920                                        */
+    /* Přesah: 1. akordeon celý + 2. akordeon napůl v hero ploše
+       -130px@1024 → -161px@1920                                        */
     .st-accordions-wrap {
-        margin-top: clamp(-12.5rem, calc(-5.268rem - 6.027vw), -9.125rem);
+        margin-top: clamp(-10.0625rem, calc(-5.911rem - 3.459vw), -8.125rem);
     }
 
-    /* Hero pb zvětšen úměrně, gap H1 ↔ 1. akordeon ~30px
-       176px@1024 → 230px@1920                                           */
+    /* Hero pb: gap H1 ↔ 1. akordeon 24px
+       160px@1024 → 191px@1920                                           */
     .hero--seznam-tvorby .hero__content {
-        padding-bottom: clamp(11rem, calc(7.143rem + 6.027vw), 14.375rem);
+        padding-bottom: clamp(10rem, calc(7.786rem + 3.459vw), 11.9375rem);
     }
 }
