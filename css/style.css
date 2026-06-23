@@ -2113,7 +2113,7 @@ h6 {
        Bílý bg mají individuální .st-accordion karty; pod hero je bílý body bg. */
     position: relative;
     z-index: 2;
-    /* 34px@360 → 68px@1920: ½ výšky 1. karty v tmavé hero ploše */
+    /* 34px@360 → 68px@1920; desktop override níže */
     margin-top: clamp(-4.25rem, calc(-1.577rem - 2.179vw), -2.125rem);
     padding-bottom: var(--section-pad);
     /* 40px@360 → 233px@1920 */
@@ -2144,10 +2144,12 @@ h6 {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    /* block: 16px@360 → 30px@1920 | inline: 20px@360 → 50px@1920 */
+    /* block: 19px@360 → 30px@1920 | right: 19px@360 → 50px@1920 | left: 24px@360 → 50px@1920 */
     padding:
-        clamp(1rem, calc(0.8rem + 0.897vw), 1.875rem)
-        clamp(1.25rem, calc(0.817rem + 1.923vw), 3.125rem);
+        clamp(1.1875rem, calc(1.029rem + 0.705vw), 1.875rem)
+        clamp(1.1875rem, calc(0.740rem + 1.987vw), 3.125rem)
+        clamp(1.1875rem, calc(1.029rem + 0.705vw), 1.875rem)
+        clamp(1.5rem, calc(1.125rem + 1.667vw), 3.125rem);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -2200,10 +2202,12 @@ h6 {
     min-height: 0;
     list-style: none;
     /* Padding přesunut sem z body, aby se animoval uvnitř */
+    /* right: 19px@360 → 50px@1920 | bottom: 19px@360 → 30px@1920 | left: 24px@360 → 50px@1920 */
     padding:
         0
-        clamp(1.25rem, calc(0.817rem + 1.923vw), 3.125rem)
-        clamp(1rem, calc(0.8rem + 0.897vw), 1.875rem);
+        clamp(1.1875rem, calc(0.740rem + 1.987vw), 3.125rem)
+        clamp(1.1875rem, calc(1.029rem + 0.705vw), 1.875rem)
+        clamp(1.5rem, calc(1.125rem + 1.667vw), 3.125rem);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -2226,4 +2230,25 @@ h6 {
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
+}
+
+/* ── SEZNAM TVORBY – desktop overlay ── */
+@media (min-width: 1024px) {
+    /* Skryjeme mobilní zalomení v prvním akordeonu */
+    .br-mobile { display: none; }
+
+    /* line-height: 60px na 1920px je pro 1 řádek příliš – zkrátíme */
+    .st-accordion__header { line-height: 1.2; }
+
+    /* Větší přesah: 1. akordeon celý + 2. akordeon napůl v hero ploše
+       -146px@1024 → -200px@1920                                        */
+    .st-accordions-wrap {
+        margin-top: clamp(-12.5rem, calc(-5.268rem - 6.027vw), -9.125rem);
+    }
+
+    /* Hero pb zvětšen úměrně, gap H1 ↔ 1. akordeon ~30px
+       176px@1024 → 230px@1920                                           */
+    .hero--seznam-tvorby .hero__content {
+        padding-bottom: clamp(11rem, calc(7.143rem + 6.027vw), 14.375rem);
+    }
 }
